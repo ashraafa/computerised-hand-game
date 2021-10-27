@@ -13,3 +13,14 @@ h1 {
     letter-spacing: 10px;
     text-align: center;
 }
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight:800;
+    font-style: italic;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+
+}
