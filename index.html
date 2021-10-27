@@ -1,14 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
-
     <title>Hand Game - RPSLS</title>
 </head>
+
 <body>
-   <script src="assets/js/scripts.js"></script> 
+    <header>
+        <h1>Rock Paper Scissors Lizard Spock</h1>
+        <p>Rock Paper Scissors Lizard Spock is a variation of Rock Paper Scissors.
+            The game adds the Lizard and Spock so there are fewer ties when you play.</p>
+    </header>
+    <section>
+        <button>Rules</button>
+        <button>Play</button>
+        <button>Quit</button>
+        <div>
+            <h2>Rules</h2>
+            <ul>
+                <li>Rock crushes Lizard and Scissors</li>
+                <li>Rock crushes Lizard and Scissors</li>
+                <li>Paper covers Rock and disproves Spock</li>
+                <li>Scissors cuts Paper and decapitates Lizard</li>
+                <li>Lizard poisons Spock and eats Paper.</li>
+                <li>Spock smashes Scissors and vaporizes Rock</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <div>
+            <h2>Select a hand</h2>
+            <button>Rock</button>
+            <button>Paper</button>
+            <button>Scissors</button>
+            <button>Lizard</button>
+            <button>Spock</button>
+        </div>
+    </section>
+    <section>
+        <div>
+            <h2>You selected</h2>
+            <div>
+                <button></button>
+            </div>
+        </div>
+        <div>
+            <h2>Game selected</h2>
+            <div>
+                <button></button>
+            </div>
+    </section>
+    <section>
+        <h2>You WON!</h2>
+        <p>Game chose Rock and you chose Paper</p>
+        <p>You won:<span> 0</span> of 3</p>
+        <p>Game won:<span> 0</span> of 3</p>
+    </section>
+    <section>
+        <h2>Congratulations!</h2>
+        <p>You won this round</p>
+        <button>Next Round?</button>
+        <p>You can click the Quit button at the top of the page if you had enough losses.</p>
+    </section>
+    <section>
+        <div>
+            <h2>Rounds Won:<span>0</span></h2>
+        </div>
+        <div>
+            <h2>Rounds Lost:<span>0</span></h2>
+        </div>
+
+    <script src="assets/js/scripts.js"></script>
 </body>
+
 </html>
