@@ -5,6 +5,8 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+/* Heading & Paragraph */
+
 h1 {
     font-family: 'Luckiest Guy', cursive;
     font-size: 3rem;
@@ -22,5 +24,32 @@ p {
     text-align: center;
     padding: 0;
     margin: 0;
+}
 
+/* Game Navigation */
+
+#game-nav {
+    margin: 2rem;
+    text-align: center;
+}
+
+.btn {
+    width: 150px;
+    height: 50px;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-right: 2rem;
+    border-radius: 10px;
+    border: 2px solid; 
+}
+
+btn::after {
+    content: attr(data-type);
+    background: chartreuse;
+}
+
+btn:active {
+    content: attr(data-type);
+    background:coral;
 }
