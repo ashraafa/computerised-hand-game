@@ -54,13 +54,12 @@ p {
     background-color: whitesmoke;
 }
 
-btn::after {
-    content: attr(data-type);
+.btn::after {
     background: chartreuse;
 }
 
-btn:active {
-    content: attr(data-type);
+.btn:hover,
+.btn:active {
     background: coral;
 }
 
@@ -77,4 +76,32 @@ btn:active {
 
 #rules h2 {
     margin: 0.5em
+}
+
+/* Game Controls Section */
+
+#game-con {
+    text-align: center;
+}
+
+.hand-btn {
+    padding-top: 10px;
+    border-radius: 50%;
+    background-color: white;
+    border: 5px solid;
+    width: 120px;
+    height: 120px;
+    font-size: 3rem;
+    margin: 0 1.5rem;
+}
+
+.btn-blue {
+    border-color: blue;
+    color: blue;
+}
+
+.btn-blue:hover,
+.btn-blue:active {
+    background-color: blue;
+    color: whitesmoke
 }
