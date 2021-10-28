@@ -110,8 +110,7 @@ p {
 /* Player and Game Answer */
 
 #ans-wrapper {
-    //display: block;
-    //margin: auto;
+   padding-top: 2rem;
 }
 
 #player-wrapper{
@@ -128,5 +127,27 @@ p {
     float: right;
     text-align: center;
     margin: 0 5rem 0 auto;
+}
+
+/* Games Won Section */
+
+#games-won {
+    width: 85%;
+    height: 20rem;
+    border: 2px solid black;
+    background-color: whitesmoke;
+    z-index: 10;
+    position: relative;
+    left: 7%;
+    display: none;
+}
+
+#games-won-cont {
+    width: 100%;
+    height: auto;
+    position: inherit;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -45%);
 }
 
