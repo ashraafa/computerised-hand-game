@@ -111,22 +111,15 @@ p {
 
 #ans-wrapper {
     padding-top: 2rem;
+    display: flex;
+    justify-content: center;
 }
 
-#player-wrapper {
-    width: 30%;
-    height: auto;
-    float: left;
-    text-align: center;
-    margin: 0 auto 0 5rem;
-}
-
+#player-wrapper,
 #game-wrapper {
-    width: 30%;
+    width: 40%;
     height: auto;
-    float: right;
     text-align: center;
-    margin: 0 5rem 0 auto;
 }
 
 /* Rounds Won Section */
@@ -157,14 +150,12 @@ p {
 /* Game Score Section */
 
 #game-score {
-    clear: both;
     padding-top: 2rem;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 #won-score,
 #lost-score {
     width: 40%;
-    display: inline-flex;
-    justify-content: center;
 }
