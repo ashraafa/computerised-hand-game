@@ -141,7 +141,7 @@ p {
     z-index: 10;
     position: absolute;
     left: 7%;
-    display: block;
+    display: none;
 }
 
 #rounds-won-msg,
@@ -152,4 +152,19 @@ p {
 #play-next {
    margin: 1.5rem;
 
+}
+
+/* Game Score Section */
+
+#game-score {
+    clear: both;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+#won-score,
+#lost-score {
+    width: 40%;
+    display: inline-flex;
+    justify-content: center;
 }
