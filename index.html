@@ -78,20 +78,24 @@
                     aria-label="Question image for game response"></i></button>
     </section>
     <section>
-        <div id="games-won">
-            <div id="games-won-cont">
-            <h2>You WON!</h2>
-            <p>Game chose Rock and you chose Paper</p>
-            <p>You won:<span> 0</span> of 3</p>
-            <p>Game won:<span> 0</span> of 3</p>
-        </div>
+        <div id="rounds-won">
+            <div id="rounds-won-msg">
+                <h2>You WON!</h2>
+                <p>Game chose Rock and you chose Paper</p>
+                <p>You won:<span> 0</span> of 3</p>
+                <p>Game won:<span> 0</span> of 3</p>
+            </div>
         </div>
     </section>
     <section>
-        <h2>Congratulations!</h2>
-        <p>You won this round</p>
-        <button>Next Round?</button>
-        <p>You can click the Quit button at the top of the page if you had enough losses.</p>
+        <div id="games-won">
+            <div id="games-won-msg">
+                <h2>Congratulations!</h2>
+                <p>You won this game<br>
+                <button class="btn" id="play-next">Continue</button></p>
+                <p>Click the Quit button at the top of the page at anytime during the game.</p>
+            </div>
+        </div>
     </section>
     <section>
         <div>

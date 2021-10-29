@@ -110,10 +110,10 @@ p {
 /* Player and Game Answer */
 
 #ans-wrapper {
-   padding-top: 2rem;
+    padding-top: 2rem;
 }
 
-#player-wrapper{
+#player-wrapper {
     width: 30%;
     height: auto;
     float: left;
@@ -129,25 +129,27 @@ p {
     margin: 0 5rem 0 auto;
 }
 
-/* Games Won Section */
+/* Rounds Won Section */
 
+#rounds-won,
 #games-won {
     width: 85%;
     height: 20rem;
     border: 2px solid black;
+    border-radius: 10px;
     background-color: whitesmoke;
     z-index: 10;
-    position: relative;
+    position: absolute;
     left: 7%;
-    display: none;
+    display: block;
 }
 
-#games-won-cont {
-    width: 100%;
-    height: auto;
-    position: inherit;
-    top: 40%;
-    left: 40%;
-    transform: translate(-50%, -45%);
+#rounds-won-msg,
+#games-won-msg {
+    margin: 5em auto;
 }
 
+#play-next {
+   margin: 1.5rem;
+
+}
