@@ -1,12 +1,19 @@
 //Add event listeners to game controls after DOM loads
 //Deactivate player controls
 
+const playButton = document.getElementById("play");
+const buttons = document.getElementsByTagName("button");
+const playerControls = document.getElementsByClassName("hand-btn");
+
 document.addEventListener("DOMContentLoaded", function() {
-    let buttons = document.getElementsByTagName("button");
+    
+    for(let handBtn of playerControls) {
+       handBtn.disabled = true;
+    }
 
     for (let button of buttons) {
         button.addEventListener("click", function() {
-                if (this.getAttribute("data-type") === "play") {
+                if (this.getAttribute('data-type') === "play") {
                     alert('Game controls will be activated');
                 } else if (this.getAttribute('data-type') === "rules") {
                     alert('Rule box will be displayed');
