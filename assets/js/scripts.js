@@ -41,14 +41,12 @@ playerControls.forEach(playerControl => playerControl.addEventListener('click', 
     playerChoice();
     calculateResult();
     roundResult();
-    closeWindow();
 }))
 
 // Event listeners for pop up windows
 document.querySelector('.close-btn').addEventListener("click", function() {
     document.getElementById('rounds-won').style.display = "none";
 })
-
 
 //Function to retrieve choices
 
@@ -150,7 +148,7 @@ function calculateResult() {
 //Display round pop up window
 function roundResult() {
     document.getElementById('rounds-won').style.display = "block";
-
+    document.getElementById('round-status').innerHTML = result;
 }
 
 function closeWindow(){
