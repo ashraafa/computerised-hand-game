@@ -1,5 +1,4 @@
-//Add event listeners to game controls after DOM loads
-//Deactivate player controls
+//Variables and Constants
 
 const navBtns = document.getElementsByClassName('btn')
 const playerControls = document.querySelectorAll(".hand-btn, .icon");
@@ -10,28 +9,36 @@ let playerSelected;
 const playerAnswer = document.getElementById("player-ans");
 
 const playerOptions = ['rock', 'paper', 'scissors', 'spock', 'lizard'];
+let result;
+let resultChoice;
+let reason;
+
+
+//Add event listeners to game controls after DOM loads
+//Deactivate player controls
 
 document.addEventListener("DOMContentLoaded", function () {
 
-        for (let btn of navBtns)
-            btn.addEventListener("click", function () {
-                if (this.getAttribute('data-type') === "rules") {
-                    alert('Rule box will be displayed');
-                }
-                if (this.getAttribute('data-type') === "quit") {
-                    alert('Quit message to check game status')
-                }
-            })
+    for (let btn of navBtns)
+        btn.addEventListener("click", function () {
+            if (this.getAttribute('data-type') === "rules") {
+                alert('Rule box will be displayed');
+            }
+            if (this.getAttribute('data-type') === "quit") {
+                alert('Quit message to check game status')
+            }
+        })
 
 });
 
-//Play function to activate game controls
+//Event listeners for game controls
 
 playerControls.forEach(playerControl => playerControl.addEventListener('click', (event) => {
     playerSelected = event.target.dataset.type;
     console.log(playerSelected);
     gameChoice();
     playerChoice();
+    calculateResult();
 
 }))
 
@@ -52,17 +59,19 @@ function playerChoice() {
 }
 
 
-function selectedChoice(gameType) {
-
-    playerChoice();
-    gameChoice();
-}
-
-
-//Main function to run game and calculate result
-function playGame() {
-
-
+//Function to calculate result
+function calculateResult() {
+    if (playerSelected === 'rock' && (gameSelected === 'lizard' || gameSelected === 'spock')) {
+        result = 'You Won';
+        resultChoice = `You chose ${playerSelected} and the Game chose ${gameSelected}`;
+        reason = 'Rock crushes Lizard and Spock';
+        console.log(result);
+        console.log(resultChoice);
+        console.log(reason);
+    } else {
+        let otherResult = 'You lost';
+         console.log(otherResult)
+    }
 }
 
 //Display result score
