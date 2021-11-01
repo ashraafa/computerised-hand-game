@@ -133,18 +133,28 @@ p {
     background-color: whitesmoke;
     z-index: 10;
     position: absolute;
+    top: 25%;
     left: 7%;
     display: none;
 }
 
 #rounds-won-msg,
 #games-won-msg {
-    margin: 5em auto;
+    margin: 2em auto;
 }
 
 #play-next {
-   margin: 1.5rem;
+    margin: 1.5rem;
 
+}
+
+.close-round {
+    position: relative;
+    left: 95%;
+    top: -5%;
+    font-size: 4rem;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 /* Game Score Section */

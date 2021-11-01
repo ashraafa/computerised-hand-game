@@ -13,6 +13,8 @@ let result;
 let resultChoice;
 let reason;
 
+const roundsWonPopUp = document.getElementById('rounds-won');
+
 
 //Add event listeners to game controls after DOM loads
 //Deactivate player controls
@@ -39,6 +41,8 @@ playerControls.forEach(playerControl => playerControl.addEventListener('click', 
     gameChoice();
     playerChoice();
     calculateResult();
+    roundResult();
+
 
 }))
 
@@ -140,9 +144,9 @@ function calculateResult() {
     }
 }
 
-//Display result score
+//Display round pop up window
 function roundResult() {
-
+    document.getElementById('rounds-won').style.display = "block";
 }
 
 //Increment round score
