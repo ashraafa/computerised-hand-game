@@ -1,6 +1,6 @@
 //Variables and Constants
 
-const navBtns = document.getElementsByClassName('btn')
+const navBtns = document.getElementsByClassName('btn');
 const playerControls = document.querySelectorAll(".hand-btn, .icon");
 
 let gameSelected;
@@ -13,7 +13,6 @@ let result;
 let resultChoice;
 let reason;
 
-const roundsWonPopUp = document.getElementById('rounds-won');
 
 
 //Add event listeners to game controls after DOM loads
@@ -42,9 +41,13 @@ playerControls.forEach(playerControl => playerControl.addEventListener('click', 
     playerChoice();
     calculateResult();
     roundResult();
-
-
+    closeWindow();
 }))
+
+// Event listeners for pop up windows
+document.querySelector('.close-btn').addEventListener("click", function() {
+    document.getElementById('rounds-won').style.display = "none";
+})
 
 
 //Function to retrieve choices
@@ -147,6 +150,13 @@ function calculateResult() {
 //Display round pop up window
 function roundResult() {
     document.getElementById('rounds-won').style.display = "block";
+
+}
+
+function closeWindow(){
+   // document.getElementsByClassName('close-btn').addEventListener("click", function() {
+    //    document.getElementById('rounds-won').style.display = "none";
+   // })
 }
 
 //Increment round score
