@@ -1,45 +1,69 @@
 //Add event listeners to game controls after DOM loads
 //Deactivate player controls
 
-const playButton = document.getElementById("play");
-const buttons = document.getElementsByTagName("button");
-const playerControls = document.getElementsByClassName("hand-btn");
+const navBtns = document.getElementsByClassName('btn')
+const playerControls = document.querySelectorAll(".hand-btn, .icon");
 
-document.addEventListener("DOMContentLoaded", function() {
-    
-    for(let handBtn of playerControls) {
-       handBtn.disabled = true;
-    }
+let gameSelected;
+const gameAnswer = document.getElementById("game-ans");
+let playerSelected;
+const playerAnswer = document.getElementById("player-ans");
 
-    for (let button of buttons) {
-        button.addEventListener("click", function() {
-                if (this.getAttribute('data-type') === "play") {
-                    alert('Game controls will be activated');
-                } else if (this.getAttribute('data-type') === "rules") {
+const playerOptions = ['rock', 'paper', 'scissors', 'spock', 'lizard'];
+
+document.addEventListener("DOMContentLoaded", function () {
+
+        for (let btn of navBtns)
+            btn.addEventListener("click", function () {
+                if (this.getAttribute('data-type') === "rules") {
                     alert('Rule box will be displayed');
-                } else if (this.getAttribute('data-type') === "quit") {
+                }
+                if (this.getAttribute('data-type') === "quit") {
                     alert('Quit message to check game status')
-                } else {
-                    let buttonType = this.getAttribute("data-type")
-                    alert(`Button not defined: ${buttonType}`);
                 }
             })
-    }
-    
-})
+
+});
 
 //Play function to activate game controls
-function activateGame() {
+
+playerControls.forEach(playerControl => playerControl.addEventListener('click', (event) => {
+    playerSelected = event.target.dataset.type;
+    console.log(playerSelected);
+    gameChoice();
+    playerChoice();
+
+}))
+
+
+//Function to retrieve choices
+
+function gameChoice() {
+
+    gameSelected = playerOptions[Math.floor(Math.random() * playerOptions.length)];
+    gameAnswer.className = `far fa-hand-${gameSelected}`;
+    console.log(gameSelected);
+}
+
+function playerChoice() {
+
+    playerAnswer.className = `far fa-hand-${playerSelected}`;
 
 }
 
-//Define array for player options and random game selection
-const playerOptions = [];
+
+function selectedChoice(gameType) {
+
+    playerChoice();
+    gameChoice();
+}
+
 
 //Main function to run game and calculate result
 function playGame() {
 
-} 
+
+}
 
 //Display result score
 function roundResult() {
