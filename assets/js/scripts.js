@@ -11,7 +11,7 @@ const playerAnswer = document.getElementById("player-ans");
 const playerOptions = ['rock', 'paper', 'scissors', 'spock', 'lizard'];
 let result;
 let resultChoice;
-let reason;
+let resultReason;
 
 let playerRoundScore = 0;
 let gameRoundScore = 0;
@@ -46,7 +46,7 @@ playerControls.forEach(playerControl => playerControl.addEventListener('click', 
 }))
 
 // Event listeners for pop up windows
-document.querySelector('.close-btn').addEventListener("click", function() {
+document.querySelector('.close-btn').addEventListener("click", function () {
     document.getElementById('rounds-won').style.display = "none";
 })
 
@@ -72,79 +72,47 @@ function calculateResult() {
     if (playerSelected === gameSelected) {
         result = 'Draw';
         resultChoice = `You chose ${playerSelected} and the Game chose ${gameSelected}`;
-        console.log(result);
-        console.log(resultChoice);
-    }
-    else if (playerSelected === 'rock' && (gameSelected === 'lizard' || gameSelected === 'scissors')) {
+        resultReason = 'Draw';
+    } else if (playerSelected === 'rock' && (gameSelected === 'lizard' || gameSelected === 'scissors')) {
         result = 'You Won!';
         resultChoice = `You chose ${playerSelected} and the Game chose ${gameSelected}`;
-        reason = 'Rock crushes Lizard and Scissors';
-        console.log(result);
-        console.log(resultChoice);
-        console.log(reason);
-    }
-    else if (playerSelected === 'paper' && (gameSelected === 'rock' || gameSelected === 'spock')) {
+        resultReason = 'Rock crushes Lizard and Scissors';
+    } else if (playerSelected === 'paper' && (gameSelected === 'rock' || gameSelected === 'spock')) {
         result = 'You Won!';
         resultChoice = `You chose ${playerSelected} and the Game chose ${gameSelected}`;
-        reason = 'Paper covers rock and disproves Spock.';
-        console.log(result);
-        console.log(resultChoice);
-        console.log(reason);
-    } 
-    else if (playerSelected === 'scissors' && (gameSelected === 'paper' || gameSelected === 'lizard')) {
+        resultReason = 'Paper covers rock and disproves Spock';
+    } else if (playerSelected === 'scissors' && (gameSelected === 'paper' || gameSelected === 'lizard')) {
         result = 'You Won!';
         resultChoice = `You chose ${playerSelected} and the Game chose ${gameSelected}`;
-        reason = 'Scissors cuts Paper and decapitates Lizard.';
-        console.log(result);
-        console.log(resultChoice);
-        console.log(reason);
-    }
-    else if (playerSelected === 'lizard' && (gameSelected === 'spock' || gameSelected === 'paper')) {
+        resultReason = 'Scissors cuts Paper and decapitates Lizard';
+    } else if (playerSelected === 'lizard' && (gameSelected === 'spock' || gameSelected === 'paper')) {
         result = 'You Won!';
         resultChoice = `You chose ${playerSelected} and the Game chose ${gameSelected}`;
-        reason = 'Lizard poisons Spock and eats Paper.';
-        console.log(result);
-        console.log(resultChoice);
-        console.log(reason);
-    } 
-    else if (playerSelected === 'spock' && (gameSelected === 'scissors' || gameSelected === 'rock')) {
+        resultReason = 'Lizard poisons Spock and eats Paper';
+    } else if (playerSelected === 'spock' && (gameSelected === 'scissors' || gameSelected === 'rock')) {
         result = 'You Won!';
         resultChoice = `You chose ${playerSelected} and the Game chose ${gameSelected}`;
-        reason = 'Spock smashes Scissors and vaporizes Rock';
-        console.log(result);
-        console.log(resultChoice);
-        console.log(reason);
-    }
-    else {
+        resultReason = 'Spock smashes Scissors and vaporizes Rock';
+
+    } else {
         result = 'You Lost!';
         resultChoice = `You chose ${playerSelected} and the Game chose ${gameSelected}`;
         if (gameSelected === 'rock') {
-            let reason = 'Rock crushes Lizard and Scissors';
-            console.log(result);
-            console.log(resultChoice);
-            console.log(reason);
+            resultReason = 'Rock crushes Lizard and Scissors';
         } else if (gameSelected === 'paper') {
-            let reason = 'Paper covers Rock and disproves Spock.';
-            console.log(result);
-            console.log(resultChoice);
-            console.log(reason);
+            resultReason = 'Paper covers Rock and disproves Spock.';
         } else if (gameSelected === 'scissors') {
-            let reason = 'Scissors cuts Paper and decapitates Lizard.';
-            console.log(result);
-            console.log(resultChoice);
-            console.log(reason);
+            resultReason = 'Scissors cuts Paper and decapitates Lizard.';
         } else if (gameSelected === 'lizard') {
-            let reason = 'Lizard poisons Spock and eats Paper.';
-            console.log(result);
-            console.log(resultChoice);
-            console.log(reason);
+            resultReason = 'Lizard poisons Spock and eats Paper';
         } else if (gameSelected === 'spock') {
-            let reason = 'Spock smashes Scissors and vaporizes Rock';
-            console.log(result);
-            console.log(resultChoice);
-            console.log(reason);
+            resultReason = 'Spock smashes Scissors and vaporizes Rock';
         }
     }
+
+    console.log(result);
+    console.log(resultChoice);
+    console.log(resultReason);
 }
 
 //Display round pop up window
@@ -153,14 +121,18 @@ function roundResult() {
     document.getElementById('round-status').innerHTML = result;
 }
 
-//Increment round score
+//Increment round score and provide result reason
 function incrementRoundScore() {
     if (result === 'You Won!') {
         document.getElementById('player-result').innerHTML = ++playerRoundScore;
-    } if (result === 'You Lost!') {
+    }
+    if (result === 'You Lost!') {
         document.getElementById('game-result').innerHTML = ++gameRoundScore;
     }
+
+    document.getElementById('score-reason').innerHTML = resultReason;
 }
+
 //Display game score
 function gameResult() {
 
