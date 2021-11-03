@@ -49,7 +49,14 @@ playerControls.forEach(playerControl => playerControl.addEventListener('click', 
 // Event listeners for pop up windows
 document.querySelector('.close-btn').addEventListener("click", function () {
     document.getElementById('rounds-won').style.display = "none";
+
 })
+
+document.querySelector('.close-btn2').addEventListener("click", function () {
+    document.getElementById('games-won').style.display = "none";
+
+})
+
 
 //Function to retrieve choices
 
@@ -139,6 +146,7 @@ function gameResult() {
     if (playerRoundScore >= 2) {
         document.getElementById('rounds-won').style.display = "none";
         document.getElementById('games-won').style.display = "block";
+        document.getElementById('game-status').innerText = 'Congrats!';
         document.getElementById('games-won-result').innerHTML = resultChoice;
         document.getElementById('games-won-reason').innerHTML = resultReason;
     }

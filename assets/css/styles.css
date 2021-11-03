@@ -127,7 +127,8 @@ p {
 #rounds-won,
 #games-won {
     width: 85%;
-    height: 20rem;
+    height: auto;
+    padding-bottom: 1.5rem;
     border: 2px solid black;
     border-radius: 10px;
     background-color: whitesmoke;
@@ -148,7 +149,8 @@ p {
 
 }
 
-.close-btn {
+.close-btn,
+.close-btn2 {
     position: relative;
     left: 95%;
     top: -5%;
