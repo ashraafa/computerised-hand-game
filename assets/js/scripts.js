@@ -134,13 +134,13 @@ function incrementRoundScore() {
     document.getElementById('score-reason').innerHTML = resultReason;
 }
 
-
-
 //Display game score
 function gameResult() {
     if (playerRoundScore >= 2) {
         document.getElementById('rounds-won').style.display = "none";
         document.getElementById('games-won').style.display = "block";
+        document.getElementById('games-won-result').innerHTML = resultChoice;
+        document.getElementById('games-won-reason').innerHTML = resultReason;
     }
 
 }
