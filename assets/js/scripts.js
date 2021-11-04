@@ -16,6 +16,10 @@ let resultReason;
 let playerRoundScore = 0;
 let gameRoundScore = 0;
 
+let roundStatus;
+let gameScoreWon = 0;
+let gameScoreLost = 0;
+
 //Add event listeners to game controls after DOM loads
 //Deactivate player controls
 
@@ -44,6 +48,7 @@ playerControls.forEach(playerControl => playerControl.addEventListener('click', 
     roundResult();
     incrementRoundScore();
     gameResult();
+    
 }))
 
 // Event listeners for pop up windows
@@ -139,6 +144,8 @@ function incrementRoundScore() {
     }
 
     document.getElementById('score-reason').innerHTML = resultReason;
+
+    console.log(playerRoundScore, gameRoundScore)
 }
 
 //Display game score
@@ -150,15 +157,25 @@ function gameResult() {
         document.getElementById('games-won-reason').innerHTML = resultReason;
     } if (playerRoundScore === 2) {
         document.getElementById('game-status').innerText = 'Congrats!';
+        roundStatus = "won";
 
     } if (gameRoundScore === 2) {
         document.getElementById('game-status').innerText = 'Sorry!';
+        roundStatus = "lost";
     }
+    console.log(roundStatus);
+
+    incrementGameScore()
 }
 
-//Increment game score
+//Increment game score and reset round score
 function incrementGameScore() {
-
+    if (roundStatus === 'won') {
+        document.getElementById('won-score').innerHTML = ++gameScoreWon
+    } else if (roundStatus === 'lost') {
+        document.getElementById('won-score').innerHTML = ++gameScoreLost
+    }
+    console.log(gameScoreWon,gameScoreLost)
 }
 
 //Continue Game
