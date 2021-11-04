@@ -48,7 +48,8 @@ playerControls.forEach(playerControl => playerControl.addEventListener('click', 
     roundResult();
     incrementRoundScore();
     gameResult();
-    
+    incrementGameScore();
+
 }))
 
 // Event listeners for pop up windows
@@ -58,8 +59,8 @@ document.querySelector('.close-btn').addEventListener("click", function () {
 })
 
 document.querySelector('.close-btn-2').addEventListener("click", function () {
-    document.getElementById('games-won').style.display = "none";
-
+    document.getElementById('games-won').style.display = "none"
+    resetRoundScore();
 })
 
 
@@ -155,27 +156,40 @@ function gameResult() {
         document.getElementById('games-won').style.display = "block";
         document.getElementById('games-won-result').innerHTML = resultChoice;
         document.getElementById('games-won-reason').innerHTML = resultReason;
-    } if (playerRoundScore === 2) {
+
+    }
+    if (playerRoundScore === 2) {
         document.getElementById('game-status').innerText = 'Congrats!';
         roundStatus = "won";
 
-    } if (gameRoundScore === 2) {
+    }
+    if (gameRoundScore === 2) {
         document.getElementById('game-status').innerText = 'Sorry!';
         roundStatus = "lost";
     }
-    console.log(roundStatus);
 
-    incrementGameScore()
+    console.log(roundStatus);
+    console.log(resultChoice);
 }
 
 //Increment game score and reset round score
 function incrementGameScore() {
     if (roundStatus === 'won') {
-        document.getElementById('won-score').innerHTML = ++gameScoreWon
+        document.getElementById('won-result-score').innerHTML = ++gameScoreWon;
     } else if (roundStatus === 'lost') {
-        document.getElementById('won-score').innerHTML = ++gameScoreLost
+        document.getElementById('lost-result-score').innerHTML = ++gameScoreLost;
     }
-    console.log(gameScoreWon,gameScoreLost)
+
+    console.log(gameScoreWon, gameScoreLost);
+}
+
+function resetRoundScore() {
+    gameRoundScore = 0;
+    playerRoundScore = 0;
+    roundStatus = "Next Game";
+    document.getElementById('player-result').innerHTML = 0;
+    document.getElementById('game-result').innerHTML = 0;
+    console.log(playerRoundScore, gameRoundScore);
 }
 
 //Continue Game
