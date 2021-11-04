@@ -61,8 +61,14 @@ document.querySelector('.close-btn').addEventListener("click", function () {
 document.querySelector('.close-btn-2').addEventListener("click", function () {
     document.getElementById('games-won').style.display = "none"
     resetRoundScore();
+    resetGameScore();
 })
 
+document.querySelector('#continue').addEventListener("click", function () {
+    document.getElementById('games-won').style.display = "none"
+    resetRoundScore();
+
+})
 
 //Function to retrieve choices
 
@@ -190,6 +196,11 @@ function resetRoundScore() {
     document.getElementById('player-result').innerHTML = 0;
     document.getElementById('game-result').innerHTML = 0;
     console.log(playerRoundScore, gameRoundScore);
+}
+
+function resetGameScore() {
+    document.getElementById('won-result-score').innerHTML = 0;
+    document.getElementById('lost-result-score').innerHTML = 0;
 }
 
 //Continue Game
