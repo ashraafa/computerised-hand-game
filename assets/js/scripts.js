@@ -52,7 +52,7 @@ document.querySelector('.close-btn').addEventListener("click", function () {
 
 })
 
-document.querySelector('.close-btn2').addEventListener("click", function () {
+document.querySelector('.close-btn-2').addEventListener("click", function () {
     document.getElementById('games-won').style.display = "none";
 
 })
@@ -143,14 +143,17 @@ function incrementRoundScore() {
 
 //Display game score
 function gameResult() {
-    if (playerRoundScore >= 2) {
+    if (playerRoundScore === 2 || gameRoundScore === 2) {
         document.getElementById('rounds-won').style.display = "none";
         document.getElementById('games-won').style.display = "block";
-        document.getElementById('game-status').innerText = 'Congrats!';
         document.getElementById('games-won-result').innerHTML = resultChoice;
         document.getElementById('games-won-reason').innerHTML = resultReason;
-    }
+    } if (playerRoundScore === 2) {
+        document.getElementById('game-status').innerText = 'Congrats!';
 
+    } if (gameRoundScore === 2) {
+        document.getElementById('game-status').innerText = 'Sorry!';
+    }
 }
 
 //Increment game score
