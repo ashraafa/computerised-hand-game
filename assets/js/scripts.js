@@ -33,15 +33,14 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (this.getAttribute('data-type') === "play") {
                 document.getElementById('game-con').style.display = "block";
                 document.getElementById('game-score').style.display = "flex";
+                document.getElementById('quit').disabled = false;
+                document.getElementById('play').disabled= true;
             }
             if (this.getAttribute('data-type') === "quit") {
                 alert('Quit message to check game status')
             }
-
         })
-
         document.getElementById('quit').disabled = true;
-
 });
 
 //Event listener for game controls
@@ -50,7 +49,6 @@ playerControls.forEach(playerControl => playerControl.addEventListener('click', 
     playerSelected = event.target.dataset.type;
     console.log(playerSelected);
     playGame();
-
 }))
 
 // Event listeners for pop up windows
@@ -58,12 +56,11 @@ playerControls.forEach(playerControl => playerControl.addEventListener('click', 
 document.querySelector('#close-btn-rules').addEventListener("click", function () {
     document.getElementById('rules').style.display = "none";
     document.getElementById('play').disabled = false;
-
 })
 
 document.querySelector('#close-btn-round').addEventListener("click", function () {
     document.getElementById('rounds-won').style.display = "none";
-
+    document.getElementById('game-con').style.display = "block"
 })
 
 document.querySelector('#close-btn-game').addEventListener("click", function () {
@@ -74,8 +71,8 @@ document.querySelector('#close-btn-game').addEventListener("click", function () 
 
 document.querySelector('#continue').addEventListener("click", function () {
     document.getElementById('games-won').style.display = "none"
+    document.getElementById('game-con').style.display = "block"
     resetRoundScore();
-    setTimeout(playGame, 3000);
 
 })
 
@@ -160,6 +157,7 @@ function calculateResult() {
 function roundResult() {
     document.getElementById('rounds-won').style.display = "block";
     document.getElementById('round-status').innerHTML = result;
+    document.getElementById('game-con').style.display = "none"
 }
 
 //Increment round score and provide result reason
@@ -181,6 +179,7 @@ function gameResult() {
     if (playerRoundScore === 2 || gameRoundScore === 2) {
         document.getElementById('rounds-won').style.display = "none";
         document.getElementById('games-won').style.display = "block";
+        document.getElementById('game-con').style.display = "none"
         document.getElementById('games-won-result').innerHTML = resultChoice;
         document.getElementById('games-won-reason').innerHTML = resultReason;
 

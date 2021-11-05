@@ -65,9 +65,7 @@ p {
     background: grey;
 }
 
-#close-btn-rules,
-#close-btn-round,
-#close-btn-game {
+#close-btn-rules {
     position: relative;
     left: 91%;
     padding-top: 0.5rem;
@@ -200,8 +198,7 @@ p {
     border-radius: 10px;
     background-color: whitesmoke;
     z-index: 10;
-    position: absolute;
-    top: 25%;
+    position: relative;
     left: 7%;
     display: none;
 }
@@ -209,6 +206,16 @@ p {
 #rounds-won-msg,
 #games-won-msg {
     margin: 2em auto;
+}
+
+#close-btn-round,
+#close-btn-game {
+    position: relative;
+    left: 94%;
+    padding-top: 0.5rem;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 #play-next {
