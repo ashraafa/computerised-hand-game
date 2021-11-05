@@ -30,6 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
             if (this.getAttribute('data-type') === "rules") {
                 document.getElementById('rules').style.display = "block";
                 document.getElementById('play').disabled = true;
+            } else if (this.getAttribute('data-type') === "play") {
+                document.getElementById('game-con').style.display = "block";
+                document.getElementById('game-score').style.display = "flex";
             }
             if (this.getAttribute('data-type') === "quit") {
                 alert('Quit message to check game status')

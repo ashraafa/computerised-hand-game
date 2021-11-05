@@ -1,5 +1,5 @@
 body {
-    background-color: bisque;
+    background-color: #347fc44d;
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -82,9 +82,9 @@ p {
     margin: auto;
     width: 50%;
     height: auto;
-    border: 2px solid;
+    border: 2px solid black;
     border-radius: 10px;
-    background-color: whitesmoke;
+    background-color: #EECF6D;
     display: none;
 }
 
@@ -92,13 +92,19 @@ p {
     margin: 0.5em
 }
 
+#rules li {
+    font-weight: bold;
+}
+
 /* Game Controls Section */
 
 #game-con {
     text-align: center;
     display: none;
-    
-    
+}
+
+#game-con h2 {
+    padding: 2rem;
 }
 
 .hand-btn {
@@ -121,6 +127,50 @@ p {
 .btn-blue:active {
     background-color: blue;
     color: whitesmoke
+}
+
+.btn-green {
+    border-color:green;
+    color: green;
+}
+
+.btn-green:hover,
+.btn-green:active {
+    background-color: green;
+    color: whitesmoke;
+}
+
+.btn-red {
+    border-color: red;
+    color: red;
+}
+
+.btn-red:hover,
+.btn-red:active {
+    background-color: red;
+    color: whitesmoke;
+}
+
+.btn-yellow {
+    border-color: magenta;
+    color: magenta;
+}
+
+.btn-yellow:hover,
+.btn-yello:active {
+    background-color: magenta;
+    color: whitesmoke;
+}
+
+.btn-orange {
+    border-color: orange;
+    color: orange;
+}
+
+.btn-orange:hover,
+.btn-orange:active {
+    background-color: orange;
+    color: whitesmoke;
 }
 
 /*  Answer Section*/
@@ -170,9 +220,8 @@ p {
 
 #game-score {
     padding-top: 2rem;
-    display: flex;
-    justify-content: center;
     display: none;
+    justify-content: center;
 }
 
 #won-score,
