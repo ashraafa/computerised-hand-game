@@ -42,13 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 playerControls.forEach(playerControl => playerControl.addEventListener('click', (event) => {
     playerSelected = event.target.dataset.type;
     console.log(playerSelected);
-    gameChoice();
-    playerChoice();
-    calculateResult();
-    roundResult();
-    incrementRoundScore();
-    gameResult();
-    incrementGameScore();
+    playGame();
 
 }))
 
@@ -67,8 +61,21 @@ document.querySelector('.close-btn-2').addEventListener("click", function () {
 document.querySelector('#continue').addEventListener("click", function () {
     document.getElementById('games-won').style.display = "none"
     resetRoundScore();
+    setTimeout(playGame, 3000);
 
 })
+
+//Function to run game
+
+function playGame() {
+    gameChoice();
+    playerChoice();
+    calculateResult();
+    roundResult();
+    incrementRoundScore();
+    gameResult();
+    incrementGameScore();
+}
 
 //Function to retrieve choices
 
@@ -199,6 +206,8 @@ function resetRoundScore() {
 }
 
 function resetGameScore() {
+    gameScoreWon = 0;
+    gameScoreLost = 0;
     document.getElementById('won-result-score').innerHTML = 0;
     document.getElementById('lost-result-score').innerHTML = 0;
 }
