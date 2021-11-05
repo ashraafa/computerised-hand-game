@@ -51,13 +51,14 @@
     <section>
         <div id="game-con">
             <h2>Select a hand</h2>
-            <button data-type="rock" class="hand-btn btn-red"><i data-type="rock" class="far fa-hand-rock" aria-label="Rock button"></i>
+            <button data-type="rock" class="hand-btn btn-red"><i data-type="rock" class="far fa-hand-rock"
+                    aria-label="Rock button"></i>
             </button>
             <button data-type="paper" class="hand-btn btn-green"><i data-type="paper" class="far fa-hand-paper"
                     aria-label="Paper button"></i>
             </button>
-            <button data-type="scissors" class="hand-btn btn-blue"><iblue data-type="scissors" class="far fa-hand-scissors"
-                    aria-label="Scissors button"></i>
+            <button data-type="scissors" class="hand-btn btn-blue">
+                <iblue data-type="scissors" class="far fa-hand-scissors" aria-label="Scissors button"></i>
             </button>
             <button data-type="lizard" class="hand-btn btn-yellow"><i data-type="lizard" class="far fa-hand-lizard"
                     aria-label="Lizard button"></i>
@@ -67,20 +68,19 @@
             </button>
         </div>
     </section>
-    <section id="ans-wrapper">
-        <div id="player-wrapper">
-            <h2>You selected</h2>
-            <button class="hand-btn btn-blue"><i id="player-ans"  class="fas fa-question"
-                    aria-label="Question image for player response"></i></button>
-        </div>
-        <div id="game-wrapper">
-            <h2>Game selected</h2>
-            <button class="hand-btn btn-blue"><i id="game-ans" class="fas fa-question"
-                    aria-label="Question image for game response"></i></button>
-    </section>
     <section>
         <div id="rounds-won">
             <i id="close-btn-round" class="far fa-times-circle"></i>
+            <div id="player-wrapper">
+                <h2>Player</h2>
+                <button class="icon-ans"><i id="player-ans" class="fas fa-question"
+                        aria-label="Question image for player response"></i></button>
+            </div>
+            <div id="game-wrapper">
+                <h2>Game</h2>
+                <button class="icon-ans"><i id="game-ans" class="fas fa-question" aria-label="Question image for game response"></i>
+                </button>
+            </div>
             <div id="rounds-won-msg">
                 <h2 id="round-status"></h2>
                 <p>You won:<span id="player-result"> 0</span> of 3</p>
@@ -95,10 +95,10 @@
                 <div id="close-btn-game">&times;</div>
                 <h2 id="game-status"></h2>
                 <p>For the Final Round</p>
-                    <p id=games-won-result></p>
-                    <p id=games-won-reason></p>
-                    <br>
-                    <button class="btn" id="continue">Continue</button>
+                <p id=games-won-result></p>
+                <p id=games-won-reason></p>
+                <br>
+                <button class="btn" id="continue">Continue</button>
                 <p>Click the Quit button at the top of the page at anytime during the game.</p>
             </div>
         </div>
@@ -110,8 +110,9 @@
         <div id="lost-score">
             <h2>Games Lost:<span id="lost-result-score">0</span></h2>
         </div>
+    </section>
 
-        <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/scripts.js"></script>
 </body>
 
 </html>
