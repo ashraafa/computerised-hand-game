@@ -28,12 +28,16 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let btn of navBtns)
         btn.addEventListener("click", function () {
             if (this.getAttribute('data-type') === "rules") {
-                alert('Rule box will be displayed');
+                document.getElementById('rules').style.display = "block";
+                document.getElementById('play').disabled = true;
             }
             if (this.getAttribute('data-type') === "quit") {
                 alert('Quit message to check game status')
             }
+
         })
+
+        document.getElementById('quit').disabled = true;
 
 });
 
@@ -47,12 +51,19 @@ playerControls.forEach(playerControl => playerControl.addEventListener('click', 
 }))
 
 // Event listeners for pop up windows
-document.querySelector('.close-btn').addEventListener("click", function () {
+
+document.querySelector('#close-btn-rules').addEventListener("click", function () {
+    document.getElementById('rules').style.display = "none";
+    document.getElementById('play').disabled = false;
+
+})
+
+document.querySelector('#close-btn-round').addEventListener("click", function () {
     document.getElementById('rounds-won').style.display = "none";
 
 })
 
-document.querySelector('.close-btn-2').addEventListener("click", function () {
+document.querySelector('#close-btn-game').addEventListener("click", function () {
     document.getElementById('games-won').style.display = "none"
     resetRoundScore();
     resetGameScore();

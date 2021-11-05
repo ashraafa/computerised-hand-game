@@ -50,17 +50,30 @@ p {
     text-transform: uppercase;
     margin: 0 2rem;
     border-radius: 10px;
-    border: 2px solid;
-    background-color: whitesmoke;
-}
-
-.btn::after {
-    background: chartreuse;
+    border: 2px solid white;
+    background-color: #347FC4;
+    color: white;
+    text-align: center;
 }
 
 .btn:hover,
-.btn:active {
-    background: coral;
+.btn:focus {
+    background: #FB5607;
+}
+
+.btn:disabled {
+    background: grey;
+}
+
+#close-btn-rules,
+#close-btn-round,
+#close-btn-game {
+    position: relative;
+    left: 91%;
+    padding-top: 0.5rem;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 /* Rules Section */
@@ -72,7 +85,7 @@ p {
     border: 2px solid;
     border-radius: 10px;
     background-color: whitesmoke;
-    display: block;
+    display: none;
 }
 
 #rules h2 {
@@ -151,16 +164,6 @@ p {
 #play-next {
     margin: 1.5rem;
 
-}
-
-.close-btn,
-.close-btn-2 {
-    position: relative;
-    left: 95%;
-    top: -5%;
-    font-size: 4rem;
-    font-weight: bold;
-    cursor: pointer;
 }
 
 /* Game Score Section */

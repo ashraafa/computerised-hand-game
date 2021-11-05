@@ -25,16 +25,17 @@
         <div id="game-nav">
             <button data-type="rules" class="btn">Rules</button>
             <button id="play" data-type="play" class="btn">Play</button>
-            <button data-type="quit" class="btn">Quit</button>
+            <button id="quit" data-type="quit" class="btn">Quit</button>
         </div>
         <div id="rules">
+            <i id="close-btn-rules" class="far fa-times-circle"></i>
             <h2>Playing Rules</h2>
             <ol>
                 <li>Player selects a hand</li>
-                <li>Game selects a hand</li>
+                <li>The Game randomly selects a hand</li>
                 <li>Winner is determined as defined in "Game Rules"</li>
-                <li>Best of 3 attempts determines winner of round</li>
-                <li>Game winner is determined by most rounds won</li>
+                <li>First player to win 2 rounds scores 1 game point</li>
+                <li>First player to win 3 games is the winner</li>
             </ol>
             <h2>Game Rules</h2>
             <ul>
@@ -79,7 +80,7 @@
     </section>
     <section>
         <div id="rounds-won">
-            <div class="close-btn">&times;</div>
+            <div id="close-btn-round">&times;</div>
             <div id="rounds-won-msg">
                 <h2 id="round-status"></h2>
                 <p>You won:<span id="player-result"> 0</span> of 3</p>
@@ -91,7 +92,7 @@
     <section>
         <div id="games-won">
             <div id="games-won-msg">
-                <div class="close-btn-2">&times;</div>
+                <div id="close-btn-game">&times;</div>
                 <h2 id="game-status"></h2>
                 <p>For the Final Round</p>
                     <p id=games-won-result></p>
