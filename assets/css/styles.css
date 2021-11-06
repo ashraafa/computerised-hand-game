@@ -248,3 +248,21 @@ p {
 #lost-score {
     width: 40%;
 }
+
+/* Winner & Loser Image */
+
+
+#final-result {
+    width: 100%;
+    display: none;
+
+}
+
+#winner,
+#loser {
+    width: 30%;
+    position: relative;
+    left: 40%;
+    display: none;
+}
+

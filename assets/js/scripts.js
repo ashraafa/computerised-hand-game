@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById('games-won').style.display = "none"
                 document.getElementById('game-con').style.display = "none"
                 document.getElementById('game-score').style.display = "none";
+                document.getElementById('final-result').style.display ="none"
                 document.getElementById('play').disabled = false;
                 resetRoundScore();
                 resetGameScore();
@@ -86,6 +87,7 @@ function playGame() {
     incrementRoundScore();
     gameResult();
     incrementGameScore();
+    winnerResult()
 }
 
 //Function to retrieve choices
@@ -228,8 +230,24 @@ function resetGameScore() {
     document.getElementById('lost-result-score').innerHTML = 0;
 }
 
-//Continue Game
+//Calculate winner of game
 
-//Display game rules
+function winnerResult() {
+        if (gameScoreWon === 3 || gameScoreLost === 3) {
+            document.getElementById('games-won').style.display = "none";
+            document.getElementById('game-con').style.display = "none"
+            document.getElementById('final-result').style.display ="block"
+    
+        }
+        if (gameScoreWon === 3) {
+            document.getElementById('winner').style.display = "block"
+            document.getElementById('result-msg').innerText = "Awesome - You won the Game!"
+    
+        }
+        if (gameScoreLost === 3) {
+            document.getElementById('loser').style.display = "block"
+            document.getElementById('result-msg').innerText = "Better luck next time!"
+        
+        }
 
-//Quit game, deactive game controls and reset scores
+}
