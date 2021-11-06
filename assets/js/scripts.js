@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById('rules').style.display = "block";
                 document.getElementById('play').disabled = true;
             } else if (this.getAttribute('data-type') === "play") {
+                document.getElementById('video-wrapper').style.display = "none"
                 document.getElementById('game-con').style.display = "block";
                 document.getElementById('game-score').style.display = "flex";
                 document.getElementById('quit').disabled = false;
@@ -43,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById('play').disabled = false;
                 resetRoundScore();
                 resetGameScore();
+                document.getElementById('video-wrapper').style.display = "block"
             }
         })
     document.getElementById('quit').disabled = true;
