@@ -4,9 +4,11 @@ const navBtns = document.getElementsByClassName('btn');
 const playerControls = document.querySelectorAll(".hand-btn, .icon");
 
 let gameSelected;
-const gameAnswer = document.getElementById("game-ans");
+const gameAnswerRound = document.getElementById('game-ans-round');
+const gameAnswerGame = document.getElementById('game-ans-game');
 let playerSelected;
-const playerAnswer = document.getElementById("player-ans");
+const playerAnswerRound = document.getElementById('player-ans-round')
+const playerAnswerGame = document.getElementById('player-ans-game')
 
 const playerOptions = ['rock', 'paper', 'scissors', 'spock', 'lizard'];
 let result;
@@ -34,20 +36,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById('game-con').style.display = "block";
                 document.getElementById('game-score').style.display = "flex";
                 document.getElementById('quit').disabled = false;
-                document.getElementById('play').disabled= true;
+                document.getElementById('play').disabled = true;
             }
             if (this.getAttribute('data-type') === "quit") {
-                alert('Quit message to check game status')
+                document.getElementById('rounds-won').style.display = "none"
+                document.getElementById('games-won').style.display = "none"
+                document.getElementById('game-con').style.display = "none"
+                document.getElementById('game-score').style.display = "none";
+                document.getElementById('play').disabled = false;
+                resetRoundScore();
+                resetGameScore();
             }
         })
-        document.getElementById('quit').disabled = true;
+    document.getElementById('quit').disabled = true;
 });
 
 //Event listener for game controls
 
 playerControls.forEach(playerControl => playerControl.addEventListener('click', (event) => {
     playerSelected = event.target.dataset.type;
-    console.log(playerSelected);
     playGame();
 }))
 
@@ -65,15 +72,8 @@ document.querySelector('#close-btn-round').addEventListener("click", function ()
 
 document.querySelector('#close-btn-game').addEventListener("click", function () {
     document.getElementById('games-won').style.display = "none"
-    resetRoundScore();
-    resetGameScore();
-})
-
-document.querySelector('#continue').addEventListener("click", function () {
-    document.getElementById('games-won').style.display = "none"
     document.getElementById('game-con').style.display = "block"
     resetRoundScore();
-
 })
 
 //Function to run game
@@ -93,13 +93,16 @@ function playGame() {
 function gameChoice() {
 
     gameSelected = playerOptions[Math.floor(Math.random() * playerOptions.length)];
-    gameAnswer.className = `far fa-hand-${gameSelected}`;
+    gameAnswerRound.className = `far fa-hand-${gameSelected}`;
+    gameAnswerGame.className = `far fa-hand-${gameSelected}`;
     console.log(gameSelected);
 }
 
 function playerChoice() {
 
-    playerAnswer.className = `far fa-hand-${playerSelected}`;
+    playerAnswerRound.className = `far fa-hand-${playerSelected}`;
+    playerAnswerGame.className = `far fa-hand-${playerSelected}`;
+    console.log(playerSelected);
 
 }
 
@@ -185,12 +188,12 @@ function gameResult() {
 
     }
     if (playerRoundScore === 2) {
-        document.getElementById('game-status').innerText = 'Congrats!';
+        document.getElementById('game-status').innerText = 'You won this Game!';
         roundStatus = "won";
 
     }
     if (gameRoundScore === 2) {
-        document.getElementById('game-status').innerText = 'Sorry!';
+        document.getElementById('game-status').innerText = 'You lost this Game!';
         roundStatus = "lost";
     }
 

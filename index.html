@@ -71,14 +71,14 @@
     <section>
         <div id="rounds-won">
             <i id="close-btn-round" class="far fa-times-circle"></i>
-            <div id="player-wrapper">
+            <div class="player-wrapper">
                 <h2>Player</h2>
-                <button class="icon-ans"><i id="player-ans" class="fas fa-question"
+                <button class="icon-ans"><i id="player-ans-round" class="fas fa-question" 
                         aria-label="Question image for player response"></i></button>
             </div>
-            <div id="game-wrapper">
+            <div class="game-wrapper">
                 <h2>Game</h2>
-                <button class="icon-ans"><i id="game-ans" class="fas fa-question" aria-label="Question image for game response"></i>
+                <button class="icon-ans"><i id="game-ans-round" class="fas fa-question" aria-label="Question image for game response"></i>
                 </button>
             </div>
             <div id="rounds-won-msg">
@@ -91,14 +91,21 @@
     </section>
     <section>
         <div id="games-won">
+            <i id="close-btn-game" class="far fa-times-circle"></i>
+            <div class="player-wrapper">
+                <h2>Player</h2>
+                <button class="icon-ans"><i id="player-ans-game" class="fas fa-question"
+                        aria-label="Question image for player response"></i></button>
+            </div>
+            <div class="game-wrapper">
+                <h2>Game</h2>
+                <button class="icon-ans"><i id="game-ans-game" class="fas fa-question" aria-label="Question image for game response"></i>
+                </button>
+            </div>
             <div id="games-won-msg">
-                <div id="close-btn-game">&times;</div>
                 <h2 id="game-status"></h2>
-                <p>For the Final Round</p>
-                <p id=games-won-result></p>
-                <p id=games-won-reason></p>
-                <br>
-                <button class="btn" id="continue">Continue</button>
+                <p id=games-won-result>
+                <p id=games-won-reason>
                 <p>Click the Quit button at the top of the page at anytime during the game.</p>
             </div>
         </div>

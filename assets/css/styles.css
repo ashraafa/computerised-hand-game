@@ -187,7 +187,7 @@ p {
     display: none;
 }
 
-#player-wrapper {
+.player-wrapper {
     float: left;
     width: 20%;
     height: auto;
@@ -196,7 +196,7 @@ p {
     margin-left: 2rem;
 
 }
-#game-wrapper {
+.game-wrapper {
     float: right;
     width: 20%;
     height: auto;
