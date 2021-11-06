@@ -44,6 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById('game-con').style.display = "none"
                 document.getElementById('game-score').style.display = "none";
                 document.getElementById('final-result').style.display ="none"
+                document.getElementById('winner').style.display = "none"
+                document.getElementById('loser').style.display = "none"
                 document.getElementById('play').disabled = false;
                 resetRoundScore();
                 resetGameScore();
@@ -193,8 +195,7 @@ function gameResult() {
         document.getElementById('game-status').innerText = 'You won this Game!';
         roundStatus = "won";
 
-    }
-    if (gameRoundScore === 2) {
+    }else if (gameRoundScore === 2) {
         document.getElementById('game-status').innerText = 'You lost this Game!';
         roundStatus = "lost";
     }
@@ -241,11 +242,12 @@ function winnerResult() {
         }
         if (gameScoreWon === 3) {
             document.getElementById('winner').style.display = "block"
+            document.getElementById('loser').style.display = "none"
             document.getElementById('result-msg').innerText = "Awesome - You won the Game!"
     
-        }
-        if (gameScoreLost === 3) {
+        }else if (gameScoreLost === 3) {
             document.getElementById('loser').style.display = "block"
+            document.getElementById('winner').style.display = "none"
             document.getElementById('result-msg').innerText = "Better luck next time!"
         
         }
