@@ -71,11 +71,13 @@ document.querySelector('#close-btn-rules').addEventListener("click", function ()
 document.querySelector('#close-btn-round').addEventListener("click", function () {
     document.getElementById('rounds-won').style.display = "none";
     document.getElementById('game-con').style.display = "block"
+    document.getElementById('play').disabled = true;
 })
 
 document.querySelector('#close-btn-game').addEventListener("click", function () {
     document.getElementById('games-won').style.display = "none"
     document.getElementById('game-con').style.display = "block"
+    document.getElementById('play').disabled = true;
     resetRoundScore();
 })
 
