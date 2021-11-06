@@ -104,6 +104,10 @@ function playerChoice() {
 
     document.getElementById('player-ans-round').className = `far fa-hand-${playerSelected}`;
     document.getElementById('player-ans-game').className = `far fa-hand-${playerSelected}`;
+    document.getElementsByClassName('player-answer')[0].innerHTML = `${playerSelected}`;
+    document.getElementsByClassName('game-answer')[0].innerHTML = `${gameSelected}`;
+    document.getElementsByClassName('player-answer')[1].innerHTML = `${playerSelected}`;
+    document.getElementsByClassName('game-answer')[1].innerHTML = `${gameSelected}`;
     console.log(playerSelected);
 
 }
