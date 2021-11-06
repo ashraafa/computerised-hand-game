@@ -21,7 +21,7 @@
         <p>Rock Paper Scissors Lizard Spock is a variation of Rock Paper Scissors.</p>
         <p>The game adds the Lizard and Spock so there are fewer ties when you play.</p>
     </header>
-    
+
     <section>
         <div id="game-nav">
             <button data-type="rules" class="btn">Rules</button>
@@ -52,7 +52,10 @@
 
     <section>
         <div id="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/x5Q6-wMx-K8" title="Youtube video of game being played" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/x5Q6-wMx-K8" title="Youtube video of game being played"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
 
         </div>
     </section>
@@ -83,14 +86,14 @@
                 <h2>Player</h2>
                 <button class="icon-ans"><i id="player-ans-round" class="fas fa-question"
                         aria-label="Question image for player response"></i></button>
-                <h3 class="player-answer"></h3>
+                <h3 id="player-answer"></h3>
             </div>
             <div class="game-wrapper">
                 <h2>Game</h2>
                 <button class="icon-ans"><i id="game-ans-round" class="fas fa-question"
                         aria-label="Question image for game response"></i>
                 </button>
-                <h3 class="game-answer"></h3>
+                <h3 id="game-answer"></h3>
             </div>
             <div id="rounds-won-msg">
                 <h2 id="round-status"></h2>
@@ -107,34 +110,33 @@
                 <h2>Player</h2>
                 <button class="icon-ans"><i id="player-ans-game" class="fas fa-question"
                         aria-label="Question image for player response"></i></button>
-                        <h3 class="player-answer"></h3>
-            
+
             </div>
             <div class="game-wrapper">
                 <h2>Game</h2>
                 <button class="icon-ans"><i id="game-ans-game" class="fas fa-question"
                         aria-label="Question image for game response"></i>
                 </button>
-                <h3 class="game-answer"></h3>
             </div>
             <div id="games-won-msg">
                 <h2 id="game-status"></h2>
-                <p id=games-won-result>
-                    <p id=games-won-reason>
-                        <p>Click the Quit button at the top of the page at anytime during the game.</p>
+                <p id=games-won-result></p>
+                <p id=games-won-reason></p>
+
             </div>
+            <p>If you click quit now you would end the game. Winner is the first player to score 3 games</p>
         </div>
     </section>
     <section>
         <div id="final-result">
-        <h2 id=result-msg></h2>
-        <div id="winner">
-            <img src="assets/images/winning-tiger.svg" alt="Happy Tiger Image">
+            <h2 id=result-msg></h2>
+            <div id="winner">
+                <img src="assets/images/winning-tiger.svg" alt="Happy Tiger Image">
+            </div>
+            <div id="loser">
+                <img src="assets/images/losing-alligator.svg" alt="Sad Alligator Image">
+            </div>
         </div>
-        <div id="loser">
-            <img src="assets/images/losing-alligator.svg" alt="Sad Alligator Image">
-        </div>
-    </div>
     </section>
 
     <section id="game-score">
