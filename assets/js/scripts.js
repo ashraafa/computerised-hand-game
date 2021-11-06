@@ -4,12 +4,6 @@ const navBtns = document.getElementsByClassName('btn');
 const playerControls = document.querySelectorAll(".hand-btn, .icon");
 
 let gameSelected;
-const gameAnswerRound = document.getElementById('game-ans-round');
-const gameAnswerGame = document.getElementById('game-ans-game');
-let playerSelected;
-const playerAnswerRound = document.getElementById('player-ans-round')
-const playerAnswerGame = document.getElementById('player-ans-game')
-
 const playerOptions = ['rock', 'paper', 'scissors', 'spock', 'lizard'];
 let result;
 let resultChoice;
@@ -99,15 +93,15 @@ function playGame() {
 function gameChoice() {
 
     gameSelected = playerOptions[Math.floor(Math.random() * playerOptions.length)];
-    gameAnswerRound.className = `far fa-hand-${gameSelected}`;
-    gameAnswerGame.className = `far fa-hand-${gameSelected}`;
+    document.getElementById('game-ans-round').className = `far fa-hand-${gameSelected}`;
+    document.getElementById('game-ans-game').className = `far fa-hand-${gameSelected}`;
     console.log(gameSelected);
 }
 
 function playerChoice() {
 
-    playerAnswerRound.className = `far fa-hand-${playerSelected}`;
-    playerAnswerGame.className = `far fa-hand-${playerSelected}`;
+    document.getElementById('player-ans-round').className = `far fa-hand-${playerSelected}`;
+    document.getElementById('player-ans-game').className = `far fa-hand-${playerSelected}`;
     console.log(playerSelected);
 
 }
