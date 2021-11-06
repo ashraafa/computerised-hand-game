@@ -25,6 +25,14 @@ h2 {
     text-align: center
 }
 
+h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
 p {
     font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;

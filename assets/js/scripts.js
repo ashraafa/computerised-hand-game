@@ -187,8 +187,10 @@ function gameResult() {
         document.getElementById('rounds-won').style.display = "none";
         document.getElementById('games-won').style.display = "block";
         document.getElementById('game-con').style.display = "none"
-        document.getElementById('games-won-result').innerHTML = resultChoice;
-        document.getElementById('games-won-reason').innerHTML = resultReason;
+        document.getElementsByClassName('games-won-result')[0].innerHTML = resultChoice;
+        document.getElementsByClassName('games-won-result')[1].innerHTML = resultChoice;
+        document.getElementsByClassName('games-won-reason')[0].innerHTML = resultReason;
+        document.getElementsByClassName('games-won-reason')[1].innerHTML = resultReason;
 
     }
     if (playerRoundScore === 2) {
