@@ -78,7 +78,7 @@ p {
     border: 2px solid white;
     background-color: #347FC4;
     color: white;
-    text-align: center;
+    padding: 1rem;
 }
 
 .btn:hover,
@@ -90,14 +90,7 @@ p {
     background: grey;
 }
 
-#close-btn-rules {
-    position: relative;
-    left: 91%;
-    padding-top: 0.5rem;
-    font-size: 3rem;
-    font-weight: bold;
-    cursor: pointer;
-}
+
 
 /* Rules Section */
 
@@ -109,6 +102,7 @@ p {
     border-radius: 10px;
     background-color: #EECF6D;
     display: none;
+    margin-bottom: 2rem;
 }
 
 #rules h2 {
@@ -119,6 +113,14 @@ p {
     font-weight: bold;
 }
 
+#close-btn-rules {
+    position: relative;
+    left: 91%;
+    padding-top: 0.5rem;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
 /* Game Controls Section */
 
 #game-con {
@@ -139,7 +141,7 @@ p {
     height: 120px;
     font-size: 3rem;
     margin: 0 1.5rem;
-    text-align: center;
+    padding: 1rem;
 }
 
 .btn-blue {
@@ -233,7 +235,7 @@ p {
 #rounds-won-msg,
 #games-won-msg {
     margin: 2em auto;
-    width: 40%;
+    width: 100%;
 }
 
 .icon-ans {
@@ -251,7 +253,7 @@ p {
 #close-btn-round,
 #close-btn-game {
     position: relative;
-    left: 70%;
+    left: 72%;
     padding-top: 0.5rem;
     font-size: 3rem;
     font-weight: bold;
@@ -291,4 +293,102 @@ p {
     position: relative;
     left: 35%;
     display: none;
+}
+
+/* Wide Screen Desktop */
+
+@media only screen and (min-width: 1300px) and (max-width: 1450px) {
+    #close-btn-round,
+#close-btn-game {
+    left: 70%;
+}
+
+}
+
+    
+/* Standard Desktop */
+@media only screen and (min-width: 1025px) and (max-width: 1300px) {
+
+
+.game-wrapper {
+    margin-right: 1rem;
+}
+
+player-wrapper {
+    margin-left: 1rem;
+}
+
+#close-btn-round,
+#close-btn-game {
+    left: 68%;
+}
+
+}
+
+/* iPad landscape */
+
+@media only screen and (min-width: 900px) and (max-width: 1024px) and (orientation: landscape) {
+    #close-btn-rules {
+        left: 88%;
+    }
+    #close-btn-round,
+    #close-btn-game {
+        left: 66%;
+    }
+
+}
+
+/* Tablet Landscape and Smaller Desktop Screens */
+
+@media only screen and (min-width: 700px) and (max-width:899px) {
+
+    h2 {
+        font-size: 1.5rem;
+        letter-spacing: 3px;   
+    }
+
+    p {
+        padding: 1rem;
+    }
+
+    .btn {
+        width: 120px;
+    }
+
+    #video-wrapper {
+        width: 44rem;
+        height: 24.75rem;
+        margin: 4
+    }
+
+    #close-btn-rules {
+        left: 86%;
+    }
+
+
+.hand-btn {
+
+    width: 100px;
+    height: 100px;
+    margin: 0 1rem;
+}
+
+#won-score,
+#lost-score {
+    padding: 0 2.4rem
+}
+
+#close-btn-round,
+    #close-btn-game {
+        left: 64%;
+    }
+
+
+.icon-ans {
+    width: 80px;
+    height: 80px;
+    margin: 0;
+    font-size: 2rem;
+}
+
 }
