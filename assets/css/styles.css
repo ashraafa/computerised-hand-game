@@ -5,7 +5,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-/* Heading & Paragraph */
+/* Headings & Paragraph */
 
 h1 {
     font-family: 'Luckiest Guy', cursive;
@@ -44,6 +44,7 @@ p {
 }
 
 /* Video on landing page */
+
 #video-wrapper {
     position: relative;
     width: 60rem;
@@ -93,8 +94,6 @@ button {
     background: grey;
 }
 
-
-
 /* Rules Section */
 
 #rules {
@@ -124,6 +123,7 @@ button {
     font-weight: bold;
     cursor: pointer;
 }
+
 /* Game Controls Section */
 
 #game-con {
@@ -136,7 +136,6 @@ button {
 }
 
 .hand-btn {
-    /*padding-top: 10px;*/
     border-radius: 50%;
     background-color: white;
     border: 5px solid;
@@ -262,11 +261,6 @@ button {
     cursor: pointer;
 }
 
-#play-next {
-    margin: 1.5rem;
-
-}
-
 /* Game Score Section */
 
 #game-score {
@@ -282,7 +276,6 @@ button {
 
 /* Winner & Loser Image */
 
-
 #final-result {
     width: 100%;
     display: none;
@@ -297,6 +290,8 @@ button {
     display: none;
 }
 
+/* Media Queries */
+
 /* Wide Screen Desktop */
 
 @media only screen and (min-width: 1300px) and (max-width: 1450px) {
@@ -304,13 +299,10 @@ button {
 #close-btn-game {
     left: 70%;
 }
-
 }
-
-    
+  
 /* Standard Desktop */
 @media only screen and (min-width: 1025px) and (max-width: 1300px) {
-
 
 .game-wrapper {
     margin-right: 1rem;
@@ -324,7 +316,6 @@ player-wrapper {
 #close-btn-game {
     left: 68%;
 }
-
 }
 
 /* iPad landscape */
@@ -343,7 +334,6 @@ player-wrapper {
     #close-btn-game {
         left: 66%;
     }
-
 }
 
 /* Tablet Landscape and Smaller Desktop Screens */
@@ -373,7 +363,6 @@ player-wrapper {
         left: 86%;
     }
 
-
 .hand-btn {
 
     width: 100px;
@@ -391,14 +380,12 @@ player-wrapper {
         left: 64%;
     }
 
-
 .icon-ans {
     width: 80px;
     height: 80px;
     margin: 0;
     font-size: 2rem;
 }
-
 }
 
 /* Tablet Small */
@@ -462,7 +449,6 @@ player-wrapper {
 #rounds-won, #games-won {
     width: 90%;
     left: 5%;
-
 }
 
 #rounds-won-msg,
@@ -483,7 +469,6 @@ margin:1rem auto 0 auto;
     width: 40%;
     margin: 3rem 0 0 auto;
 }
-
 }
 
 /* Smartphone small */
@@ -521,7 +506,6 @@ margin:1rem auto 0 auto;
 
     #rules {
         width: 90%;
-
     }
 
     #close-btn-rules {
@@ -541,7 +525,6 @@ margin:1rem auto 0 auto;
     #rounds-won, #games-won {
         width: 90%;
         left: 5%;
-
     }
 
     #rounds-won-msg,
@@ -572,6 +555,7 @@ margin:1rem auto 0 auto;
 }
 
 }
+
  /* Smartphone medium */
 
 @media only screen and (min-width: 401px) and (max-width: 499px) {
@@ -653,8 +637,6 @@ margin:14rem auto 0 auto;
     width: 35%;
     margin: 3rem 1rem 0 auto
 }
-
-
 }
 
 /* Smartphone Large */
@@ -718,7 +700,6 @@ margin:14rem auto 0 auto;
 #rounds-won, #games-won {
     width: 90%;
     left: 5%;
-
 }
 
 #rounds-won-msg,
@@ -739,5 +720,4 @@ margin:1rem auto 0 auto;
     width: 35%;
     margin: 3rem 0 0 auto;
 }
-
 }
