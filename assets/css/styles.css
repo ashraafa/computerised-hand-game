@@ -68,7 +68,7 @@ p {
 }
 
 button {
-    padding: 1rem;
+    padding: 0;
 }
 
 .btn {
@@ -82,7 +82,6 @@ button {
     border: 2px solid white;
     background-color: #347FC4;
     color: white;
-    padding: 1rem;
 }
 
 .btn:hover,
@@ -145,7 +144,6 @@ button {
     height: 120px;
     font-size: 3rem;
     margin: 0 1.5rem;
-    padding: 1rem;
 }
 
 .btn-blue {
