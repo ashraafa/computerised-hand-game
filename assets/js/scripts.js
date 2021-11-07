@@ -17,7 +17,7 @@ let gameScoreWon = 0;
 let gameScoreLost = 0;
 
 //Add event listeners to game controls after DOM loads
-//Deactivate player controls
+//Enable and disable DOM objects as needed
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -32,8 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById('game-score').style.display = "flex";
                 document.getElementById('quit').disabled = false;
                 document.getElementById('play').disabled = true;
-            }
-            if (this.getAttribute('data-type') === "quit") {
+            }else if (this.getAttribute('data-type') === "quit") {
                 document.getElementById('rounds-won').style.display = "none"
                 document.getElementById('games-won').style.display = "none"
                 document.getElementById('game-con').style.display = "none"
@@ -51,25 +50,30 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('quit').disabled = true;
 });
 
-//Event listener for game controls
+//Event listener to play game after user clicks the Play button
 
 playerControls.forEach(playerControl => playerControl.addEventListener('click', (event) => {
     playerSelected = event.target.dataset.type;
     playGame();
 }))
 
-// Event listeners for pop up windows
+// Event listener for the close button when Rules is clicked
 
 document.querySelector('#close-btn-rules').addEventListener("click", function () {
     document.getElementById('rules').style.display = "none";
     document.getElementById('play').disabled = false;
 })
 
+// Event listener for the close button when Round Won message is displayed
+
 document.querySelector('#close-btn-round').addEventListener("click", function () {
     document.getElementById('rounds-won').style.display = "none";
     document.getElementById('game-con').style.display = "block"
     document.getElementById('play').disabled = true;
 })
+
+// Event listener for the close button when Game Won message is displayed
+// Reset round score
 
 document.querySelector('#close-btn-game').addEventListener("click", function () {
     document.getElementById('games-won').style.display = "none"
@@ -78,7 +82,9 @@ document.querySelector('#close-btn-game').addEventListener("click", function () 
     resetRoundScore();
 })
 
-//Function to run game
+/**
+ * Main function to execute all other functions required to play the game
+ */
 
 function playGame() {
     gameChoice();
@@ -91,30 +97,35 @@ function playGame() {
     winnerResult()
 }
 
-//Function to retrieve choices
 
-function gameChoice() {
+/**
+ * Function to insert player's choice into the Games Won and Rounds Won message
+ */
 
-    gameSelected = playerOptions[Math.floor(Math.random() * playerOptions.length)];
-    document.getElementById('game-ans-round').className = `far fa-hand-${gameSelected}`;
-    document.getElementById('game-ans-game').className = `far fa-hand-${gameSelected}`;
-    console.log(gameSelected);
-}
-
-function playerChoice() {
-
+ function playerChoice() {
     document.getElementById('player-ans-round').className = `far fa-hand-${playerSelected}`;
     document.getElementById('player-ans-game').className = `far fa-hand-${playerSelected}`;
     document.getElementById('player-answer').innerHTML = `${playerSelected}`;
-    document.getElementById('game-answer').innerHTML = `${gameSelected}`;
     console.log(playerSelected);
-
 }
 
+/**
+ * Function to calculate game's random choice and insert choice into the Games Won and Rounds Won message
+ */
 
-//Function to calculate result and feedback
+function gameChoice() {
+    gameSelected = playerOptions[Math.floor(Math.random() * playerOptions.length)];
+    document.getElementById('game-ans-round').className = `far fa-hand-${gameSelected}`;
+    document.getElementById('game-ans-game').className = `far fa-hand-${gameSelected}`;
+    document.getElementById('game-answer').innerHTML = `${gameSelected}`;
+    console.log(gameSelected);
+}
+
+/**
+ * Function to calculate result and set valaus for variables which will be used for displaying results to the user
+ */
+
 function calculateResult() {
-
     if (playerSelected === gameSelected) {
         result = 'Draw';
         resultChoice = `You chose ${playerSelected} and the Game chose ${gameSelected}`;
@@ -155,20 +166,25 @@ function calculateResult() {
             resultReason = 'Spock smashes Scissors and vaporizes Rock';
         }
     }
-
     console.log(result);
     console.log(resultChoice);
     console.log(resultReason);
 }
 
-//Display round pop up window
+/**
+ * Function to display results pop up after completing a round
+ */
+
 function roundResult() {
     document.getElementById('rounds-won').style.display = "block";
     document.getElementById('round-status').innerHTML = result;
     document.getElementById('game-con').style.display = "none"
 }
 
-//Increment round score and provide result reason
+/**
+ * Function to increment round score and populate the results message pop up
+ */
+
 function incrementRoundScore() {
     if (result === 'You Won!') {
         document.getElementById('player-result').innerHTML = ++playerRoundScore;
@@ -176,13 +192,14 @@ function incrementRoundScore() {
     if (result === 'You Lost!') {
         document.getElementById('game-result').innerHTML = ++gameRoundScore;
     }
-
     document.getElementById('score-reason').innerHTML = resultReason;
-
     console.log(playerRoundScore, gameRoundScore)
 }
 
-//Display game score
+/**
+ * Function to display round results pop up once any player reaches a score of 2
+ */
+
 function gameResult() {
     if (playerRoundScore === 2 || gameRoundScore === 2) {
         document.getElementById('rounds-won').style.display = "none";
@@ -192,31 +209,33 @@ function gameResult() {
         document.getElementsByClassName('games-won-result')[1].innerHTML = resultChoice;
         document.getElementsByClassName('games-won-reason')[0].innerHTML = resultReason;
         document.getElementsByClassName('games-won-reason')[1].innerHTML = resultReason;
-
     }
     if (playerRoundScore === 2) {
         document.getElementById('game-status').innerText = 'You won this Game!';
         roundStatus = "won";
-
     }else if (gameRoundScore === 2) {
         document.getElementById('game-status').innerText = 'You lost this Game!';
         roundStatus = "lost";
     }
-
     console.log(roundStatus);
-    console.log(resultChoice);
 }
 
-//Increment game score and reset round score
+/**
+ * Function to increment game lost or won score
+ */
+
 function incrementGameScore() {
     if (roundStatus === 'won') {
         document.getElementById('won-result-score').innerHTML = ++gameScoreWon;
     } else if (roundStatus === 'lost') {
         document.getElementById('lost-result-score').innerHTML = ++gameScoreLost;
     }
-
     console.log(gameScoreWon, gameScoreLost);
 }
+
+/**
+ * Function to reset round score 
+ */
 
 function resetRoundScore() {
     gameRoundScore = 0;
@@ -227,6 +246,10 @@ function resetRoundScore() {
     console.log(playerRoundScore, gameRoundScore);
 }
 
+/**
+ * Function to reset game score variable and innerHTML
+ */
+
 function resetGameScore() {
     gameScoreWon = 0;
     gameScoreLost = 0;
@@ -234,7 +257,9 @@ function resetGameScore() {
     document.getElementById('lost-result-score').innerHTML = 0;
 }
 
-//Calculate winner of game
+/**
+* Function to display final result window and disable game result message
+*/
 
 function winnerResult() {
         if (gameScoreWon === 3 || gameScoreLost === 3) {
@@ -242,8 +267,6 @@ function winnerResult() {
             document.getElementById('game-con').style.display = "none"
             document.getElementById('final-result').style.display ="block"
             document.getElementById('rules-btn').disabled = true;
-
-    
         }
         if (gameScoreWon === 3) {
             document.getElementById('winner').style.display = "block"
@@ -254,7 +277,5 @@ function winnerResult() {
             document.getElementById('loser').style.display = "block"
             document.getElementById('winner').style.display = "none"
             document.getElementById('result-msg').innerText = "Better luck next time!"
-        
         }
-
 }
