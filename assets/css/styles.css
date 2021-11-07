@@ -330,6 +330,12 @@ player-wrapper {
 /* iPad landscape */
 
 @media only screen and (min-width: 900px) and (max-width: 1024px) and (orientation: landscape) {
+
+    #video-wrapper {
+        width: 55em;
+        height: 30.9375rem;
+    }
+
     #close-btn-rules {
         left: 88%;
     }
@@ -342,7 +348,7 @@ player-wrapper {
 
 /* Tablet Landscape and Smaller Desktop Screens */
 
-@media only screen and (min-width: 700px) and (max-width:899px) {
+@media only screen and (min-width: 716px) and (max-width:899px) {
 
     h2 {
         font-size: 1.5rem;
@@ -360,7 +366,7 @@ player-wrapper {
     #video-wrapper {
         width: 44rem;
         height: 24.75rem;
-        margin: 4
+
     }
 
     #close-btn-rules {
@@ -395,9 +401,94 @@ player-wrapper {
 
 }
 
-/* Smartphone  */
+/* Tablet Small */
 
-@media only screen and (min-width: 320px) and (max-width: 699px) {
+@media only screen and (min-width: 621px) and (max-width: 715px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p { 
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .btn {
+
+        margin: 1rem;
+        width: 120px;
+    
+    }
+
+    #video-wrapper {
+        width: 37rem;
+        height: 20.8125rem;
+        margin: 2rem auto;
+    }
+
+    #rules {
+        width: 70%;
+
+    }
+
+    #close-btn-rules {
+        left: 90%;
+        font-size: 2.5rem;
+    }
+
+    .hand-btn {
+        width: 90px;
+        height: 90px;
+        font-size: 2.5rem;
+        margin: 1rem;
+    }
+    #game-score {
+        clear: both;
+    }
+    #won-score,
+#lost-score {
+    width: 50%;
+    padding: 0;
+ }
+
+#rounds-won, #games-won {
+    width: 90%;
+    left: 5%;
+
+}
+
+#rounds-won-msg,
+#games-won-msg {
+margin:1rem auto 0 auto;
+}
+
+#close-btn-round, #close-btn-game {
+    font-size: 2.5rem;
+    left: 66%;
+}
+
+.player-wrapper {
+    width: 40%;
+    margin: 3rem auto 0 0;
+}
+.game-wrapper {
+    width: 40%;
+    margin: 3rem 0 0 auto;
+}
+
+}
+
+/* Smartphone small */
+
+@media only screen and (min-width: 320px) and (max-width: 400px) {
     h1 {
         font-size: 2rem;
     }
@@ -425,15 +516,7 @@ player-wrapper {
     #video-wrapper {
         width: 19rem;
         height: 10.6875rem;
-    }
-
-
-    .hand-btn {
-        border: 4px solid;
-        width: 80px;
-        height: 80px;
-        font-size: 2rem;
-        margin: 0 0.2em;
+        margin: 2rem auto;
     }
 
     #rules {
@@ -446,6 +529,15 @@ player-wrapper {
         font-size: 2rem;
     }
 
+    .hand-btn {
+        border: 4px solid;
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+        margin: 0 0.2em;
+    }
+
+   
     #rounds-won, #games-won {
         width: 90%;
         left: 5%;
@@ -477,6 +569,175 @@ player-wrapper {
 .game-wrapper {
     width: 35%;
     margin: 3rem 1rem 0 auto
+}
+
+}
+ /* Smartphone medium */
+
+@media only screen and (min-width: 401px) and (max-width: 499px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p { 
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+
+        margin: 0.5rem;
+        width: 75px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    #game-nav {
+        margin: 1rem;
+    }
+
+    #video-wrapper {
+        width: 24rem;
+        height: 13.5rem;
+        margin: 2rem auto;
+    }
+
+    #rules {
+        width: 90%;
+
+    }
+
+    #close-btn-rules {
+        left: 90%;
+        font-size: 2rem;
+    }
+
+    .hand-btn {
+        border: 4px solid;
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+        margin: 0 0.2em;
+    }
+    
+    #won-score,
+#lost-score {
+    width: 50%;
+    padding: 0;
+}
+#rounds-won, #games-won {
+    width: 90%;
+    left: 5%;
+
+}
+
+#rounds-won-msg,
+#games-won-msg {
+margin:14rem auto 0 auto;
+}
+
+#close-btn-round, #close-btn-game {
+    font-size: 2.5rem;
+    left: 49%;
+}
+
+.player-wrapper {
+    width: 35%;
+    margin: 3rem auto 0 1rem;
+}
+.game-wrapper {
+    width: 35%;
+    margin: 3rem 1rem 0 auto
+}
+
+
+}
+
+/* Smartphone Large */
+
+@media only screen and (min-width: 500px) and (max-width: 620px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p { 
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+
+        margin: 0.5rem;
+        width: 75px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    #game-nav {
+        margin: 1rem;
+    }
+
+    #video-wrapper {
+        width: 30rem;
+        height: 16.875rem;
+        margin: 2rem auto;
+    }
+
+    #rules {
+        width: 90%;
+
+    }
+
+    #close-btn-rules {
+        left: 91%;
+        font-size: 2.5rem;
+    }
+
+    .hand-btn {
+        border: 4px solid;
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+        margin: 0 0.2em;
+    }
+    
+    #won-score,
+#lost-score {
+    width: 50%;
+    padding: 0;
+ }
+
+#rounds-won, #games-won {
+    width: 90%;
+    left: 5%;
+
+}
+
+#rounds-won-msg,
+#games-won-msg {
+margin:1rem auto 0 auto;
+}
+
+#close-btn-round, #close-btn-game {
+    font-size: 2.5rem;
+    left: 55%;
+}
+
+.player-wrapper {
+    width: 35%;
+    margin: 3rem auto 0 0;
+}
+.game-wrapper {
+    width: 35%;
+    margin: 3rem 0 0 auto;
 }
 
 }
