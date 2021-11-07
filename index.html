@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,13 +14,14 @@
     <title>Hand Game - RPSLS</title>
 </head>
 
+<!-- Title and overview -->
 <body>
     <header>
         <h1>Rock Paper Scissors Lizard Spock</h1>
         <p>Rock Paper Scissors Lizard Spock is a variation of Rock Paper Scissors.</p>
         <p>The game adds the Lizard and Spock so there are fewer ties when you play.</p>
     </header>
-
+<!-- Game navigation section -->
     <section>
         <div id="game-nav">
             <button id="rules-btn" data-type="rules" class="btn">Rules</button>
@@ -48,16 +48,16 @@
             </ul>
         </div>
     </section>
-
+<!-- Game video section -->
     <section>
         <div id="video-wrapper">
             <iframe src="https://www.youtube.com/embed/x5Q6-wMx-K8" title="Youtube video of game being played"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
-
         </div>
     </section>
+<!-- Game controls section -->
     <section>
         <div id="game-con">
             <h2>Select a hand</h2>
@@ -78,6 +78,7 @@
             </button>
         </div>
     </section>
+<!-- Rounds won message section -->
     <section>
         <div id="rounds-won">
             <i id="close-btn-round" class="far fa-times-circle"></i>
@@ -102,6 +103,7 @@
             </div>
         </div>
     </section>
+<!-- Games won message section -->
     <section>
         <div id="games-won">
             <i id="close-btn-game" class="far fa-times-circle"></i>
@@ -109,7 +111,6 @@
                 <h2>Player</h2>
                 <button class="icon-ans"><i id="player-ans-game" class="fas fa-question"
                         aria-label="Question image for player response"></i></button>
-
             </div>
             <div class="game-wrapper">
                 <h2>Game</h2>
@@ -121,11 +122,11 @@
                 <h2 id="game-status"></h2>
                 <p class=games-won-result></p>
                 <p class=games-won-reason></p>
-
             </div>
             <p>If you click quit now you would end the game. Winner is the first player to win 3 games</p>
         </div>
     </section>
+<!-- Final Result Section -->
     <section>
         <div id="final-result">
             <h2 id=result-msg></h2>
@@ -139,7 +140,7 @@
             </div>
         </div>
     </section>
-
+<!-- Game Score Section -->
     <section id="game-score">
         <div id="won-score">
             <h2>Games Won:<span id="won-result-score">0</span></h2>
@@ -148,8 +149,6 @@
             <h2>Games Lost:<span id="lost-result-score">0</span></h2>
         </div>
     </section>
-
     <script src="assets/js/scripts.js"></script>
 </body>
-
 </html>

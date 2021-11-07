@@ -157,7 +157,7 @@ button {
 }
 
 .btn-green {
-    border-color:green;
+    border-color: green;
     color: green;
 }
 
@@ -225,6 +225,7 @@ button {
     margin-left: 2rem;
 
 }
+
 .game-wrapper {
     float: right;
     width: 20%;
@@ -233,6 +234,7 @@ button {
     margin-top: 4rem;
     margin-right: 2rem;
 }
+
 #rounds-won-msg,
 #games-won-msg {
     margin: 2em auto;
@@ -295,27 +297,28 @@ button {
 /* Wide Screen Desktop */
 
 @media only screen and (min-width: 1300px) and (max-width: 1450px) {
+
     #close-btn-round,
-#close-btn-game {
-    left: 70%;
+    #close-btn-game {
+        left: 70%;
+    }
 }
-}
-  
+
 /* Standard Desktop */
 @media only screen and (min-width: 1025px) and (max-width: 1300px) {
 
-.game-wrapper {
-    margin-right: 1rem;
-}
+    .game-wrapper {
+        margin-right: 1rem;
+    }
 
-player-wrapper {
-    margin-left: 1rem;
-}
+    player-wrapper {
+        margin-left: 1rem;
+    }
 
-#close-btn-round,
-#close-btn-game {
-    left: 68%;
-}
+    #close-btn-round,
+    #close-btn-game {
+        left: 68%;
+    }
 }
 
 /* iPad landscape */
@@ -330,6 +333,7 @@ player-wrapper {
     #close-btn-rules {
         left: 88%;
     }
+
     #close-btn-round,
     #close-btn-game {
         left: 66%;
@@ -342,7 +346,7 @@ player-wrapper {
 
     h2 {
         font-size: 1.5rem;
-        letter-spacing: 3px;   
+        letter-spacing: 3px;
     }
 
     p {
@@ -363,29 +367,29 @@ player-wrapper {
         left: 86%;
     }
 
-.hand-btn {
+    .hand-btn {
 
-    width: 100px;
-    height: 100px;
-    margin: 0 1rem;
-}
+        width: 100px;
+        height: 100px;
+        margin: 0 1rem;
+    }
 
-#won-score,
-#lost-score {
-    padding: 0 2.4rem
-}
+    #won-score,
+    #lost-score {
+        padding: 0 2.4rem
+    }
 
-#close-btn-round,
+    #close-btn-round,
     #close-btn-game {
         left: 64%;
     }
 
-.icon-ans {
-    width: 80px;
-    height: 80px;
-    margin: 0;
-    font-size: 2rem;
-}
+    .icon-ans {
+        width: 80px;
+        height: 80px;
+        margin: 0;
+        font-size: 2rem;
+    }
 }
 
 /* Tablet Small */
@@ -396,7 +400,7 @@ player-wrapper {
         font-size: 2rem;
     }
 
-    p { 
+    p {
         font-size: 1rem;
     }
 
@@ -412,7 +416,7 @@ player-wrapper {
 
         margin: 1rem;
         width: 120px;
-    
+
     }
 
     #video-wrapper {
@@ -437,38 +441,43 @@ player-wrapper {
         font-size: 2.5rem;
         margin: 1rem;
     }
+
     #game-score {
         clear: both;
     }
+
     #won-score,
-#lost-score {
-    width: 50%;
-    padding: 0;
- }
+    #lost-score {
+        width: 50%;
+        padding: 0;
+    }
 
-#rounds-won, #games-won {
-    width: 90%;
-    left: 5%;
-}
+    #rounds-won,
+    #games-won {
+        width: 90%;
+        left: 5%;
+    }
 
-#rounds-won-msg,
-#games-won-msg {
-margin:1rem auto 0 auto;
-}
+    #rounds-won-msg,
+    #games-won-msg {
+        margin: 1rem auto 0 auto;
+    }
 
-#close-btn-round, #close-btn-game {
-    font-size: 2.5rem;
-    left: 66%;
-}
+    #close-btn-round,
+    #close-btn-game {
+        font-size: 2.5rem;
+        left: 66%;
+    }
 
-.player-wrapper {
-    width: 40%;
-    margin: 3rem auto 0 0;
-}
-.game-wrapper {
-    width: 40%;
-    margin: 3rem 0 0 auto;
-}
+    .player-wrapper {
+        width: 40%;
+        margin: 3rem auto 0 0;
+    }
+
+    .game-wrapper {
+        width: 40%;
+        margin: 3rem 0 0 auto;
+    }
 }
 
 /* Smartphone small */
@@ -478,7 +487,7 @@ margin:1rem auto 0 auto;
         font-size: 2rem;
     }
 
-    p { 
+    p {
         font-size: 1rem;
     }
 
@@ -521,18 +530,20 @@ margin:1rem auto 0 auto;
         margin: 0 0.2em;
     }
 
-   
-    #rounds-won, #games-won {
+
+    #rounds-won,
+    #games-won {
         width: 90%;
         left: 5%;
     }
 
     #rounds-won-msg,
-#games-won-msg {
-    margin:13em auto 0 auto;
-}
+    #games-won-msg {
+        margin: 13em auto 0 auto;
+    }
 
-    #close-btn-round, #close-btn-game {
+    #close-btn-round,
+    #close-btn-game {
         font-size: 2rem;
         left: 47%;
     }
@@ -545,18 +556,19 @@ margin:1rem auto 0 auto;
     }
 
 
-.player-wrapper {
-    width: 35%;
-    margin: 3rem auto 0 1rem;
-}
-.game-wrapper {
-    width: 35%;
-    margin: 3rem 1rem 0 auto
-}
+    .player-wrapper {
+        width: 35%;
+        margin: 3rem auto 0 1rem;
+    }
+
+    .game-wrapper {
+        width: 35%;
+        margin: 3rem 1rem 0 auto
+    }
 
 }
 
- /* Smartphone medium */
+/* Smartphone medium */
 
 @media only screen and (min-width: 401px) and (max-width: 499px) {
 
@@ -564,7 +576,7 @@ margin:1rem auto 0 auto;
         font-size: 2rem;
     }
 
-    p { 
+    p {
         font-size: 1rem;
     }
 
@@ -607,36 +619,40 @@ margin:1rem auto 0 auto;
         font-size: 2rem;
         margin: 0 0.2em;
     }
-    
+
     #won-score,
-#lost-score {
-    width: 50%;
-    padding: 0;
-}
-#rounds-won, #games-won {
-    width: 90%;
-    left: 5%;
+    #lost-score {
+        width: 50%;
+        padding: 0;
+    }
 
-}
+    #rounds-won,
+    #games-won {
+        width: 90%;
+        left: 5%;
 
-#rounds-won-msg,
-#games-won-msg {
-margin:14rem auto 0 auto;
-}
+    }
 
-#close-btn-round, #close-btn-game {
-    font-size: 2.5rem;
-    left: 49%;
-}
+    #rounds-won-msg,
+    #games-won-msg {
+        margin: 14rem auto 0 auto;
+    }
 
-.player-wrapper {
-    width: 35%;
-    margin: 3rem auto 0 1rem;
-}
-.game-wrapper {
-    width: 35%;
-    margin: 3rem 1rem 0 auto
-}
+    #close-btn-round,
+    #close-btn-game {
+        font-size: 2.5rem;
+        left: 49%;
+    }
+
+    .player-wrapper {
+        width: 35%;
+        margin: 3rem auto 0 1rem;
+    }
+
+    .game-wrapper {
+        width: 35%;
+        margin: 3rem 1rem 0 auto
+    }
 }
 
 /* Smartphone Large */
@@ -647,7 +663,7 @@ margin:14rem auto 0 auto;
         font-size: 2rem;
     }
 
-    p { 
+    p {
         font-size: 1rem;
     }
 
@@ -690,34 +706,37 @@ margin:14rem auto 0 auto;
         font-size: 2rem;
         margin: 0 0.2em;
     }
-    
+
     #won-score,
-#lost-score {
-    width: 50%;
-    padding: 0;
- }
+    #lost-score {
+        width: 50%;
+        padding: 0;
+    }
 
-#rounds-won, #games-won {
-    width: 90%;
-    left: 5%;
-}
+    #rounds-won,
+    #games-won {
+        width: 90%;
+        left: 5%;
+    }
 
-#rounds-won-msg,
-#games-won-msg {
-margin:1rem auto 0 auto;
-}
+    #rounds-won-msg,
+    #games-won-msg {
+        margin: 1rem auto 0 auto;
+    }
 
-#close-btn-round, #close-btn-game {
-    font-size: 2.5rem;
-    left: 55%;
-}
+    #close-btn-round,
+    #close-btn-game {
+        font-size: 2.5rem;
+        left: 55%;
+    }
 
-.player-wrapper {
-    width: 35%;
-    margin: 3rem auto 0 0;
-}
-.game-wrapper {
-    width: 35%;
-    margin: 3rem 0 0 auto;
-}
+    .player-wrapper {
+        width: 35%;
+        margin: 3rem auto 0 0;
+    }
+
+    .game-wrapper {
+        width: 35%;
+        margin: 3rem 0 0 auto;
+    }
 }
