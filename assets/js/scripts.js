@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 resetRoundScore();
                 resetGameScore();
                 document.getElementById('video-wrapper').style.display = "block"
+                document.getElementById('rules-btn').disabled = false;
             }
         })
     document.getElementById('quit').disabled = true;
@@ -240,6 +241,8 @@ function winnerResult() {
             document.getElementById('games-won').style.display = "none";
             document.getElementById('game-con').style.display = "none"
             document.getElementById('final-result').style.display ="block"
+            document.getElementById('rules-btn').disabled = true;
+
     
         }
         if (gameScoreWon === 3) {
