@@ -2,13 +2,13 @@
 
 ## Introduction
 
-### History
+* ### History
 
-Rock-Paper-Scissors-Lizard-Spock is a variation of the Rock-Paper-Scissors hand game. The game of Rock-Paper-Scissors-Lizard-Spock was invented by a software engineer named Sam Kass.This game adds the Lizard and Spock so there are fewer ties when you play.
+  Rock-Paper-Scissors-Lizard-Spock is a variation of the Rock-Paper-Scissors hand game. The game of Rock-Paper-Scissors-Lizard-Spock was invented by a software engineer named Sam Kass.This game adds the Lizard and Spock so there are fewer ties when you play.
 
-### Target Audience
+* ### Target Audience
 
-The target audience of the site is for users that want to be challenged by a game of chance and have fun doing so. This site is intended to provide the user with an interactive and engaging experience.
+  The target audience of the site is for users that want to be challenged by a game of chance and have fun doing so. This site is intended to provide the user with an interactive and engaging experience.
 
 The live site can be accessed [here](https://ashraafa.github.io/computerised-hand-game/)
 
@@ -16,18 +16,18 @@ The live site can be accessed [here](https://ashraafa.github.io/computerised-han
 
 ## User Experience and Design
 
-### User Stories
-   1. As a player of the game, I want to know the rules of the game.
-   2. As a player of the game, I want to start the game at any time.
-   3. As a player of the game, I want to quit the game at any time.
-   4. As a player of the game, I want to see the choice made by the game.
-   5. As a player of the game, I want to see the reason I won or lost.
-   6. As a player of the game, I want to see my progress.
-   7. As a player of the game, I want to be know when the game is complete.
+* ### User Stories
+  1. As a player of the game, I want to know the rules of the game.
+  2. As a player of the game, I want to start the game at any time.
+  3. As a player of the game, I want to quit the game at any time.
+  4. As a player of the game, I want to see the choice made by the game.
+  5. As a player of the game, I want to see the reason I won or lost.
+  6. As a player of the game, I want to see my progress.
+  7. As a player of the game, I want to be know when the game is complete.
 
-### Design
-#### Wireframes
-During the design phase it was decided that a separate mobile design was not needed due to the number of page elements and available page space that was not going to be consumed.  The user stories were considered when designing the mock-ups.
+* ### Design
+  * #### Wireframes
+    During the design phase it was decided that a separate mobile design was not needed due to the number of page elements and available page space that was not going to be consumed.  The user stories were considered when designing the mock-ups.
 
   * #### Landing Page
     * The page was designed to be the resting place before the user starts the game.
@@ -40,12 +40,12 @@ During the design phase it was decided that a separate mobile design was not nee
 ![Game Display](assets/images/game-controls-wf.png)
 
   * Results Message
-   * The results message is a pop up that is displayed to provide feedback after each attempt by the user.
-
+    * The results message is a pop up that is displayed to provide feedback after each attempt by the user.
+ 
 ![Results Message](assets/images/results-message-wf.png)
 
   * Final Feedback
-   * The final feedback was designed to display the final result to the user.
+    * The final feedback was designed to display the final result to the user.
 
 ![Final Feedback](assets/images/final-result-wf.png)
 
