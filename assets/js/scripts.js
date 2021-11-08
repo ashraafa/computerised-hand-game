@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */ 
+
 //Variables and Constants
 
 const navBtns = document.getElementsByClassName('btn');
