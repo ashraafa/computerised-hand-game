@@ -4,6 +4,7 @@ const navBtns = document.getElementsByClassName('btn');
 const playerControls = document.querySelectorAll(".hand-btn, .icon");
 
 let gameSelected;
+let playerSelected;
 const playerOptions = ['rock', 'paper', 'scissors', 'spock', 'lizard'];
 let result;
 let resultChoice;
@@ -27,26 +28,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById('rules').style.display = "block";
                 document.getElementById('play').disabled = true;
             } else if (this.getAttribute('data-type') === "play") {
-                document.getElementById('video-wrapper').style.display = "none"
+                document.getElementById('video-wrapper').style.display = "none";
                 document.getElementById('game-con').style.display = "block";
                 document.getElementById('game-score').style.display = "flex";
                 document.getElementById('quit').disabled = false;
                 document.getElementById('play').disabled = true;
             }else if (this.getAttribute('data-type') === "quit") {
-                document.getElementById('rounds-won').style.display = "none"
-                document.getElementById('games-won').style.display = "none"
-                document.getElementById('game-con').style.display = "none"
+                document.getElementById('rounds-won').style.display = "none";
+                document.getElementById('games-won').style.display = "none";
+                document.getElementById('game-con').style.display = "none";
                 document.getElementById('game-score').style.display = "none";
-                document.getElementById('final-result').style.display ="none"
-                document.getElementById('winner').style.display = "none"
-                document.getElementById('loser').style.display = "none"
+                document.getElementById('final-result').style.display ="none";
+                document.getElementById('winner').style.display = "none";
+                document.getElementById('loser').style.display = "none";
                 document.getElementById('play').disabled = false;
-                resetRoundScore();
-                resetGameScore();
-                document.getElementById('video-wrapper').style.display = "block"
+                document.getElementById('video-wrapper').style.display = "block";
                 document.getElementById('rules-btn').disabled = false;
             }
-        })
+        });
     document.getElementById('quit').disabled = true;
 });
 
@@ -55,32 +54,38 @@ document.addEventListener("DOMContentLoaded", function () {
 playerControls.forEach(playerControl => playerControl.addEventListener('click', (event) => {
     playerSelected = event.target.dataset.type;
     playGame();
-}))
+}));
 
 // Event listener for the close button when Rules is clicked
 
 document.querySelector('#close-btn-rules').addEventListener("click", function () {
     document.getElementById('rules').style.display = "none";
     document.getElementById('play').disabled = false;
-})
+});
+
+//
+document.querySelector('#quit').addEventListener("click", function () {
+resetRoundScore();
+resetGameScore();
+});
 
 // Event listener for the close button when Round Won message is displayed
 
 document.querySelector('#close-btn-round').addEventListener("click", function () {
     document.getElementById('rounds-won').style.display = "none";
-    document.getElementById('game-con').style.display = "block"
+    document.getElementById('game-con').style.display = "block";
     document.getElementById('play').disabled = true;
-})
+});
 
 // Event listener for the close button when Game Won message is displayed
 // Reset round score
 
 document.querySelector('#close-btn-game').addEventListener("click", function () {
-    document.getElementById('games-won').style.display = "none"
-    document.getElementById('game-con').style.display = "block"
+    document.getElementById('games-won').style.display = "none";
+    document.getElementById('game-con').style.display = "block";
     document.getElementById('play').disabled = true;
     resetRoundScore();
-})
+});
 
 /**
  * Main function to execute all other functions required to play the game
@@ -94,7 +99,7 @@ function playGame() {
     incrementRoundScore();
     gameResult();
     incrementGameScore();
-    winnerResult()
+    winnerResult();
 }
 
 
@@ -178,7 +183,7 @@ function calculateResult() {
 function roundResult() {
     document.getElementById('rounds-won').style.display = "block";
     document.getElementById('round-status').innerHTML = result;
-    document.getElementById('game-con').style.display = "none"
+    document.getElementById('game-con').style.display = "none";
 }
 
 /**
@@ -193,7 +198,7 @@ function incrementRoundScore() {
         document.getElementById('game-result').innerHTML = ++gameRoundScore;
     }
     document.getElementById('score-reason').innerHTML = resultReason;
-    console.log(playerRoundScore, gameRoundScore)
+    console.log(playerRoundScore, gameRoundScore);
 }
 
 /**
@@ -204,7 +209,7 @@ function gameResult() {
     if (playerRoundScore === 2 || gameRoundScore === 2) {
         document.getElementById('rounds-won').style.display = "none";
         document.getElementById('games-won').style.display = "block";
-        document.getElementById('game-con').style.display = "none"
+        document.getElementById('game-con').style.display = "none";
         document.getElementsByClassName('games-won-result')[0].innerHTML = resultChoice;
         document.getElementsByClassName('games-won-result')[1].innerHTML = resultChoice;
         document.getElementsByClassName('games-won-reason')[0].innerHTML = resultReason;
@@ -264,18 +269,18 @@ function resetGameScore() {
 function winnerResult() {
         if (gameScoreWon === 3 || gameScoreLost === 3) {
             document.getElementById('games-won').style.display = "none";
-            document.getElementById('game-con').style.display = "none"
-            document.getElementById('final-result').style.display ="block"
+            document.getElementById('game-con').style.display = "none";
+            document.getElementById('final-result').style.display ="block";
             document.getElementById('rules-btn').disabled = true;
         }
         if (gameScoreWon === 3) {
-            document.getElementById('winner').style.display = "block"
-            document.getElementById('loser').style.display = "none"
-            document.getElementById('result-msg').innerText = "Awesome - You won the Game!"
+            document.getElementById('winner').style.display = "block";
+            document.getElementById('loser').style.display = "none";
+            document.getElementById('result-msg').innerText = "Awesome - You won the Game!";
     
         }else if (gameScoreLost === 3) {
-            document.getElementById('loser').style.display = "block"
-            document.getElementById('winner').style.display = "none"
-            document.getElementById('result-msg').innerText = "Better luck next time!"
+            document.getElementById('loser').style.display = "block";
+            document.getElementById('winner').style.display = "none";
+            document.getElementById('result-msg').innerText = "Better luck next time!";
         }
 }
