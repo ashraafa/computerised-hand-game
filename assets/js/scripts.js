@@ -1,4 +1,4 @@
-/*jshint esversion: 6 */ 
+/*jshint esversion: 6 */
 
 //Variables and Constants
 
@@ -35,12 +35,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById('game-score').style.display = "flex";
                 document.getElementById('quit').disabled = false;
                 document.getElementById('play').disabled = true;
-            }else if (this.getAttribute('data-type') === "quit") {
+            } else if (this.getAttribute('data-type') === "quit") {
                 document.getElementById('rounds-won').style.display = "none";
                 document.getElementById('games-won').style.display = "none";
                 document.getElementById('game-con').style.display = "none";
                 document.getElementById('game-score').style.display = "none";
-                document.getElementById('final-result').style.display ="none";
+                document.getElementById('final-result').style.display = "none";
                 document.getElementById('winner').style.display = "none";
                 document.getElementById('loser').style.display = "none";
                 document.getElementById('play').disabled = false;
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('quit').disabled = true;
 });
 
-//Event listener to play game after user clicks the Play button
+//Event listener to play game after user makes a hand selection
 
 playerControls.forEach(playerControl => playerControl.addEventListener('click', (event) => {
     playerSelected = event.target.dataset.type;
@@ -65,10 +65,16 @@ document.querySelector('#close-btn-rules').addEventListener("click", function ()
     document.getElementById('play').disabled = false;
 });
 
-//
+// Event listener to stop video when Play is clicked
+document.querySelector('#play').addEventListener("click", function () {
+    stopVideo();
+});
+
+// Event listener to reset scores when the Quit button is clicked
 document.querySelector('#quit').addEventListener("click", function () {
-resetRoundScore();
-resetGameScore();
+    resetRoundScore();
+    resetGameScore();
+    stopVideo();
 });
 
 // Event listener for the close button when Round Won message is displayed
@@ -109,7 +115,7 @@ function playGame() {
  * Function to insert player's choice into the Games Won and Rounds Won message
  */
 
- function playerChoice() {
+function playerChoice() {
     document.getElementById('player-ans-round').className = `far fa-hand-${playerSelected}`;
     document.getElementById('player-ans-game').className = `far fa-hand-${playerSelected}`;
     document.getElementById('player-answer').innerHTML = `${playerSelected}`;
@@ -220,7 +226,7 @@ function gameResult() {
     if (playerRoundScore === 2) {
         document.getElementById('game-status').innerText = 'You won this Game!';
         roundStatus = "won";
-    }else if (gameRoundScore === 2) {
+    } else if (gameRoundScore === 2) {
         document.getElementById('game-status').innerText = 'You lost this Game!';
         roundStatus = "lost";
     }
@@ -265,24 +271,35 @@ function resetGameScore() {
 }
 
 /**
-* Function to display final result window and disable game result message
-*/
+ * Function to display final result window and disable game result message
+ */
 
 function winnerResult() {
-        if (gameScoreWon === 3 || gameScoreLost === 3) {
-            document.getElementById('games-won').style.display = "none";
-            document.getElementById('game-con').style.display = "none";
-            document.getElementById('final-result').style.display ="block";
-            document.getElementById('rules-btn').disabled = true;
-        }
-        if (gameScoreWon === 3) {
-            document.getElementById('winner').style.display = "block";
-            document.getElementById('loser').style.display = "none";
-            document.getElementById('result-msg').innerText = "Awesome - You won the Game!";
-    
-        }else if (gameScoreLost === 3) {
-            document.getElementById('loser').style.display = "block";
-            document.getElementById('winner').style.display = "none";
-            document.getElementById('result-msg').innerText = "Better luck next time!";
-        }
+    if (gameScoreWon === 3 || gameScoreLost === 3) {
+        document.getElementById('games-won').style.display = "none";
+        document.getElementById('game-con').style.display = "none";
+        document.getElementById('final-result').style.display = "block";
+        document.getElementById('rules-btn').disabled = true;
+    }
+    if (gameScoreWon === 3) {
+        document.getElementById('winner').style.display = "block";
+        document.getElementById('loser').style.display = "none";
+        document.getElementById('result-msg').innerText = "Awesome - You won the Game!";
+
+    } else if (gameScoreLost === 3) {
+        document.getElementById('loser').style.display = "block";
+        document.getElementById('winner').style.display = "none";
+        document.getElementById('result-msg').innerText = "Better luck next time!";
+    }
+}
+
+
+//Function found on https://stackoverflow.com/questions/13598423/stop-all-playing-iframe-videos-on-click-a-link-javascript
+
+/**
+ * Function to stop video
+ */
+function stopVideo() {
+    let iframe = document.getElementById('video');
+    iframe.src = iframe.src
 }
