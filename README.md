@@ -34,13 +34,13 @@ The live site can be accessed [here](https://ashraafa.github.io/computerised-han
 ## 2. User Experience and Design
 
 * ### User Stories
-  1. As a player of the game, I want to know the rules of the game.
-  2. As a player of the game, I want to start the game at any time.
-  3. As a player of the game, I want to quit the game at any time.
-  4. As a player of the game, I want to see the choice made by the game.
-  5. As a player of the game, I want to see the reason I won or lost.
-  6. As a player of the game, I want to see my progress.
-  7. As a player of the game, I want to be know when the game is complete.
+  * As a player of the game, I want to know the rules of the game.
+  * As a player of the game, I want to start the game at any time.
+  * As a player of the game, I want to quit the game at any time.
+  * As a player of the game, I want to see the choice made by the game.
+  * As a player of the game, I want to see the reason I won or lost.
+  * As a player of the game, I want to see my progress.
+  * As a player of the game, I want to be know when the game is complete.
 
 * ### Design
   * Wireframes
@@ -212,9 +212,13 @@ This section introduces the feature that have been implemented to satisfy the us
 
 | Bug | Solution |
 | --------------- | --------------- |
-| Bug 1 | Solution 1 |
-| Bug 1 | Solution 1 |
-| Bug 1 | Solution 1 |
+| 1. When a game is a draw the reason is not displayed | value for resultReason was missing in the calculateResult function |
+| 2. Game score displays 0 but after winning the score increments to last won value | Updated the resetGameScore function to set the gameScoreWon and gameScoreLost value to 0 |
+| 3. Result message not displaying the selected hand options  | Add data-type to icon since the attribute did not exist and therefore when user cliced the icon it would set the value as |
+| 4. JSHint gave warning "Functions declared within loops referencing an outer scoped variable may lead to confusing semantics" | Removed function from btn.eventListener when Play is clicked and created a separate event listener specifically for the Play button |
+| 5. Close button on rules not displaying on smaller screens | Set the relative position for the rules close button |
+| 6. HTML validator identified frameless border as being deprecated | Removed frameless border from iframe tag and set property in CSS instead |
+| 7. Aria-label misuse warning from HTML validator | Removed ari-label from icon and set on game control button instead |
 
 ## 6. Deployment
 

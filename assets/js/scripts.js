@@ -110,7 +110,6 @@ function playGame() {
     winnerResult();
 }
 
-
 /**
  * Function to insert player's choice into the Games Won and Rounds Won message
  */
@@ -292,7 +291,6 @@ function winnerResult() {
         document.getElementById('result-msg').innerText = "Better luck next time!";
     }
 }
-
 
 //Function found on https://stackoverflow.com/questions/13598423/stop-all-playing-iframe-videos-on-click-a-link-javascript
 
