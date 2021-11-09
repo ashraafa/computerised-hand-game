@@ -83,7 +83,7 @@ The live site can be accessed [here](https://ashraafa.github.io/computerised-han
 
 
 ## 3. Features
-This section introduces the feature that have been implemented to satisfy the user stories that have been defined.
+This section introduces the features that have been implemented to satisfy the user stories that have been defined.
 
 * Title and Information
   * The title is displayed in bold using the Luckiest Guy font and draws attention to the name of the game.
@@ -105,7 +105,7 @@ This section introduces the feature that have been implemented to satisfy the us
     ![Informational Video](assets/images/info-video.PNG)
 
 * Player Controls
-  * The player controls is dsiaplyed when the user clicks Play.
+  * The player controls are displayed when the user clicks Play.
   * The controls make use of [Font Awesome](https://fontawesome.com/) icons using an array of bright colors.
 
     ![Player Controls](assets/images/player-controls.PNG)
@@ -128,7 +128,7 @@ This section introduces the feature that have been implemented to satisfy the us
 
 * Game Won Message
   * The game result is displayed each time any player wins 2 rounds.
-  * The message includeds the player slection and game selection
+  * The message includeds the player selection and game selection
   * The message provides a result reason as well. These are the same reasons provided in the Rules section.
   * The number of games won is not displayed in the message as it is visible on the main page.
   * The message includes a warning that if the user clicks Quit the game will be terminated.
@@ -212,13 +212,14 @@ This section introduces the feature that have been implemented to satisfy the us
 
 | Bug | Solution |
 | --------------- | --------------- |
-| 1. When a game is a draw the reason is not displayed | value for resultReason was missing in the calculateResult function |
+| 1. When a game is a draw the reason is not displayed | Value for resultReason was missing in the calculateResult function |
 | 2. Game score displays 0 but after winning the score increments to last won value | Updated the resetGameScore function to set the gameScoreWon and gameScoreLost value to 0 |
 | 3. Result message not displaying the selected hand options  | Add data-type to icon since the attribute did not exist and therefore when user cliced the icon it would set the value as |
 | 4. JSHint gave warning "Functions declared within loops referencing an outer scoped variable may lead to confusing semantics" | Removed function from btn.eventListener when Play is clicked and created a separate event listener specifically for the Play button |
 | 5. Close button on rules not displaying on smaller screens | Set the relative position for the rules close button |
 | 6. HTML validator identified frameless border as being deprecated | Removed frameless border from iframe tag and set property in CSS instead |
 | 7. Aria-label misuse warning from HTML validator | Removed ari-label from icon and set on game control button instead |
+| 8. Video keeps playing after disaply for video-wrapper is set to none | Created a function that resets iframe.src |
 
 ## 6. Deployment
 
@@ -226,7 +227,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
   * In the GitHub repository, navigate to the Settings tab.
   * On the left menu list, select Pages.
   * In the source section drop-down menu, select the Main Branch and click Save.
-  * Upon successful save, the Github Pages section will display a message to indicate that the site is ready to be published at https://ashraafa.github.io/our-travels/.
+  * Upon successful save, the Github Pages section will display a message to indicate that the site is ready to be published at https://ashraafa.github.io/computerised-hand-game/.
 
 ## 7. Credits
 
