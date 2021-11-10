@@ -19,9 +19,11 @@ let roundStatus;
 let gameScoreWon = 0;
 let gameScoreLost = 0;
 
-//Add event listeners to game controls after DOM loads
-//Enable and disable DOM objects as needed
-
+/*
+Add event listeners to the game control buttons after DOM
+loads.  Get the data-type attribute and to disables buttons,
+enabled and disables HTML elments
+*/
 document.addEventListener("DOMContentLoaded", function () {
 
     for (let btn of navBtns)
@@ -51,54 +53,55 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('quit').disabled = true;
 });
 
-//Event listener to play game after user makes a hand selection
-
+//Event listener to identify data-type of button for the player's choice
 playerControls.forEach(playerControl => playerControl.addEventListener('click', (event) => {
     playerSelected = event.target.dataset.type;
     playGame();
 }));
 
-// Event listener for the close button when Rules is clicked
-
+/* Event listener to disable Play, hide rules modal when when user clicks
+the close button on rules
+*/
 document.querySelector('#close-btn-rules').addEventListener("click", function () {
     document.getElementById('rules').style.display = "none";
     document.getElementById('play').disabled = false;
 });
 
-// Event listener to stop video when Play is clicked
+//Event listener to stop Youtube video when Play button is selected
 document.querySelector('#play').addEventListener("click", function () {
     stopVideo();
 });
 
-// Event listener to reset scores when the Quit button is clicked
+/*Event listener to reset round and game scores, stop Youtube video when 
+Quit button is selected
+*/
 document.querySelector('#quit').addEventListener("click", function () {
     resetRoundScore();
     resetGameScore();
     stopVideo();
 });
 
-// Event listener for the close button when Round Won message is displayed
-
+/*Event listener to enable game buttons and hide result modal message when 
+closing icon is selected
+*/
 document.querySelector('#close-btn-round').addEventListener("click", function () {
     document.getElementById('rounds-won').style.display = "none";
     document.getElementById('game-con').style.display = "block";
-    document.getElementById('play').disabled = true;
 });
 
-// Event listener for the close button when Game Won message is displayed
-// Reset round score
-
+/* Event listener to enable game buttons, reset round score and hide game result
+modal message when close icon is selected
+*/
 document.querySelector('#close-btn-game').addEventListener("click", function () {
     document.getElementById('games-won').style.display = "none";
     document.getElementById('game-con').style.display = "block";
-    document.getElementById('play').disabled = true;
     resetRoundScore();
 });
 
 /**
- * Main function to execute all other functions required to play the game
+ * Main function to execute all required functions to play and complete
+ * the game.
  */
-
 function playGame() {
     gameChoice();
     playerChoice();
@@ -111,32 +114,29 @@ function playGame() {
 }
 
 /**
- * Function to insert player's choice into the Games Won and Rounds Won message
+ * Function to retrieve DOM objects and insert player's choice into the 
+ * Games Won and Rounds Won modal message
  */
-
 function playerChoice() {
     document.getElementById('player-ans-round').className = `far fa-hand-${playerSelected}`;
     document.getElementById('player-ans-game').className = `far fa-hand-${playerSelected}`;
     document.getElementById('player-answer').innerHTML = `${playerSelected}`;
-    console.log(playerSelected);
 }
 
 /**
  * Function to calculate game's random choice and insert choice into the Games Won and Rounds Won message
  */
-
 function gameChoice() {
     gameSelected = playerOptions[Math.floor(Math.random() * playerOptions.length)];
     document.getElementById('game-ans-round').className = `far fa-hand-${gameSelected}`;
     document.getElementById('game-ans-game').className = `far fa-hand-${gameSelected}`;
     document.getElementById('game-answer').innerHTML = `${gameSelected}`;
-    console.log(gameSelected);
 }
 
 /**
- * Function to calculate result and set valaus for variables which will be used for displaying results to the user
+ * Function to calculate a result and set values for declared variables. The values will be retrived  
+ * by functions to display results to the user
  */
-
 function calculateResult() {
     if (playerSelected === gameSelected) {
         result = 'Draw';
@@ -162,7 +162,6 @@ function calculateResult() {
         result = 'You Won!';
         resultChoice = `You chose ${playerSelected} and the Game chose ${gameSelected}`;
         resultReason = 'Spock smashes Scissors and vaporizes Rock';
-
     } else {
         result = 'You Lost!';
         resultChoice = `You chose ${playerSelected} and the Game chose ${gameSelected}`;
@@ -178,15 +177,11 @@ function calculateResult() {
             resultReason = 'Spock smashes Scissors and vaporizes Rock';
         }
     }
-    console.log(result);
-    console.log(resultChoice);
-    console.log(resultReason);
 }
 
 /**
- * Function to display results pop up after completing a round
+ * Function to display results message modal and hide game controls after completing a round
  */
-
 function roundResult() {
     document.getElementById('rounds-won').style.display = "block";
     document.getElementById('round-status').innerHTML = result;
@@ -194,9 +189,9 @@ function roundResult() {
 }
 
 /**
- * Function to increment round score and populate the results message pop up
+ * Function to increment round score base on value of the result variable result and 
+ * subsequently update the results modal message.
  */
-
 function incrementRoundScore() {
     if (result === 'You Won!') {
         document.getElementById('player-result').innerHTML = ++playerRoundScore;
@@ -209,7 +204,8 @@ function incrementRoundScore() {
 }
 
 /**
- * Function to display round results pop up once any player reaches a score of 2
+ * Function to display game results modal if any player reaches a score of 2, update modal message
+ * with result choice and reason values.
  */
 
 function gameResult() {
@@ -221,7 +217,7 @@ function gameResult() {
         document.getElementsByClassName('games-won-result')[1].innerHTML = resultChoice;
         document.getElementsByClassName('games-won-reason')[0].innerHTML = resultReason;
         document.getElementsByClassName('games-won-reason')[1].innerHTML = resultReason;
-    }
+    } 
     if (playerRoundScore === 2) {
         document.getElementById('game-status').innerText = 'You won this Game!';
         roundStatus = "won";
@@ -229,39 +225,34 @@ function gameResult() {
         document.getElementById('game-status').innerText = 'You lost this Game!';
         roundStatus = "lost";
     }
-    console.log(roundStatus);
 }
 
 /**
- * Function to increment game lost or won score
+ * Function to increment game scores and update values in HTML
  */
-
 function incrementGameScore() {
     if (roundStatus === 'won') {
         document.getElementById('won-result-score').innerHTML = ++gameScoreWon;
     } else if (roundStatus === 'lost') {
         document.getElementById('lost-result-score').innerHTML = ++gameScoreLost;
     }
-    console.log(gameScoreWon, gameScoreLost);
 }
 
 /**
- * Function to reset round score 
+ * Function to reset game and round score variable values, update HTML values and 
+ * set round status value.
  */
-
 function resetRoundScore() {
     gameRoundScore = 0;
     playerRoundScore = 0;
     roundStatus = "Next Game";
     document.getElementById('player-result').innerHTML = 0;
     document.getElementById('game-result').innerHTML = 0;
-    console.log(playerRoundScore, gameRoundScore);
 }
 
 /**
  * Function to reset game score variable and innerHTML
  */
-
 function resetGameScore() {
     gameScoreWon = 0;
     gameScoreLost = 0;
@@ -270,21 +261,22 @@ function resetGameScore() {
 }
 
 /**
- * Function to display final result window and disable game result message
+ * Function to display final result window if any player wins 3 games, display HTML element
+ * for win or lose.Disable rules and play button.
  */
-
 function winnerResult() {
     if (gameScoreWon === 3 || gameScoreLost === 3) {
         document.getElementById('games-won').style.display = "none";
         document.getElementById('game-con').style.display = "none";
         document.getElementById('final-result').style.display = "block";
         document.getElementById('rules-btn').disabled = true;
+        document.getElementById('play').disabled = true;
+        
     }
     if (gameScoreWon === 3) {
         document.getElementById('winner').style.display = "block";
         document.getElementById('loser').style.display = "none";
         document.getElementById('result-msg').innerText = "Awesome - You won the Game!";
-
     } else if (gameScoreLost === 3) {
         document.getElementById('loser').style.display = "block";
         document.getElementById('winner').style.display = "none";
@@ -292,12 +284,11 @@ function winnerResult() {
     }
 }
 
-//Function found on https://stackoverflow.com/questions/13598423/stop-all-playing-iframe-videos-on-click-a-link-javascript
-
+//Credit to https://stackoverflow.com/questions/13598423/stop-all-playing-iframe-videos-on-click-a-link-javascript
 /**
- * Function to stop video
+ * Function to stop video from playing
  */
 function stopVideo() {
     let iframe = document.getElementById('video');
-    iframe.src = iframe.src
+    iframe.src = iframe.src;
 }
