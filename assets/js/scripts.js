@@ -200,7 +200,6 @@ function incrementRoundScore() {
         document.getElementById('game-result').innerHTML = ++gameRoundScore;
     }
     document.getElementById('score-reason').innerHTML = resultReason;
-    console.log(playerRoundScore, gameRoundScore);
 }
 
 /**
